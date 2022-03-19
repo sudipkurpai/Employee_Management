@@ -20,6 +20,10 @@ public class OTP_V extends javax.swing.JFrame {
         initComponents();
         err.setVisible(false);
         
+        
+        
+        
+        
     }
     
 
