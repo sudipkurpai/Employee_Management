@@ -11,6 +11,8 @@ import com.raven.swing.MenuItem;
 import com.raven.swing.PopupMenu;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;
 import com.raven.swing.icon.IconFontSwing;
+import employee_management.Email_Verification;
+import employee_management.Email_Verification;
 import employee_management.test;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -48,17 +50,13 @@ public class Main extends javax.swing.JFrame {
                         main.showForm(new Form_Home());
                     } else if (subMenuIndex == 1) {
                         main.showForm(new Form1());
-                    } else if (subMenuIndex == 2) {
-                        main.showForm(new Form1());
-                    }
+                    } 
                 }else  if (menuIndex == 1) {
                     if (subMenuIndex == 0) {
                         main.showForm(new Form_Home());
-                    } else if (subMenuIndex == 1) {
-                        main.showForm(new Form1());
                     } else if (subMenuIndex == 2) {
-                        main.showForm(new test());
-                    }
+                        main.showForm(new Email_Verification());
+                    } 
                 }
             }
         });
