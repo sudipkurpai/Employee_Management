@@ -29,10 +29,8 @@ public class hiii extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Close_bb = new javax.swing.JPanel();
-        Close_b = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -50,47 +48,30 @@ public class hiii extends javax.swing.JPanel {
         ss1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
+        Close_b = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Reset password-pana1.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 650, 740));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 740));
 
         Close_bb.setBackground(new java.awt.Color(255, 255, 255));
         Close_bb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        Close_b.setFont(new java.awt.Font("Dialog", 1, 40)); // NOI18N
-        Close_b.setForeground(new java.awt.Color(255, 0, 51));
-        Close_b.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Close_b.setText("×");
-        Close_b.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Close_b.setPreferredSize(new java.awt.Dimension(40, 40));
-        Close_b.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Close_bMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Close_bMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Close_bMouseExited(evt);
-            }
-        });
 
         javax.swing.GroupLayout Close_bbLayout = new javax.swing.GroupLayout(Close_bb);
         Close_bb.setLayout(Close_bbLayout);
         Close_bbLayout.setHorizontalGroup(
             Close_bbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Close_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
         Close_bbLayout.setVerticalGroup(
             Close_bbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Close_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel1.add(Close_bb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 0, 40, 40));
+        add(Close_bb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 0, 40, 40));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,22 +79,22 @@ public class hiii extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 125, 254));
         jLabel2.setText("Your Password");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 380, 44));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 380, 44));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 125, 254));
         jLabel3.setText("Reset ");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 220, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 220, 40));
 
         jLabel4.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 125, 254));
         jLabel4.setText("Password:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 120, 30));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 120, 30));
 
         jLabel5.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 125, 254));
         jLabel5.setText("Confirm Password:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 200, 30));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 200, 30));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
@@ -152,7 +133,7 @@ public class hiii extends javax.swing.JPanel {
         });
         jPanel3.add(ss, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 350, 50));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 350, 50));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
@@ -191,12 +172,12 @@ public class hiii extends javax.swing.JPanel {
         });
         jPanel4.add(ss1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 350, 50));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 350, 50));
 
         jPanel6.setBackground(new java.awt.Color(0, 125, 254));
         jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel16.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Submit");
@@ -213,20 +194,28 @@ public class hiii extends javax.swing.JPanel {
             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, 350, 50));
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 350, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 550, 740));
+        Close_b.setFont(new java.awt.Font("Dialog", 1, 40)); // NOI18N
+        Close_b.setForeground(new java.awt.Color(255, 0, 51));
+        Close_b.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Close_b.setText("×");
+        Close_b.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Close_b.setPreferredSize(new java.awt.Dimension(40, 40));
+        Close_b.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Close_bMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Close_bMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Close_bMouseExited(evt);
+            }
+        });
+        jPanel2.add(Close_b, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 738, Short.MAX_VALUE)
-        );
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 480, 740));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
@@ -300,7 +289,6 @@ public class hiii extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

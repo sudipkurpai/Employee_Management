@@ -9,6 +9,7 @@ import com.raven.form.Form_Home;
 import com.raven.form.MainForm;
 import static com.raven.main.Main.main;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -245,19 +246,28 @@ public class Login extends javax.swing.JFrame {
     private void Close_bMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseExited
         // TODO add your handling code here:
         Close_bb.setBackground(new Color(255, 255, 255));
-        Close_b.setForeground(new Color(14,73,181));
+        Close_b.setForeground(new Color(255,0,0));
     }//GEN-LAST:event_Close_bMouseExited
 
     private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered
         // TODO add your handling code here:
-        Close_bb.setBackground(new Color(228, 0, 23));
+        Close_bb.setBackground(new Color(255, 0, 0));
         Close_b.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_Close_bMouseEntered
 
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
         // TODO add your handling code here:
-
-        this.dispose();
+ int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Close This Application ?");
+        if(Yes == 0){
+            
+            
+            this.dispose();
+        }else{
+             int No=0;
+                if (No == 0){
+                }
+               }
+     
     }//GEN-LAST:event_Close_bMouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked

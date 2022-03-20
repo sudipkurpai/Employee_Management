@@ -20,6 +20,7 @@ import employee_management.hiii;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
@@ -57,13 +58,31 @@ public class Main extends javax.swing.JFrame {
                     } 
                 }else  if (menuIndex == 1) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new Form_Home());
+                        main.showForm(new MainForm());
                     } else if (subMenuIndex == 1) {
-                        main.showForm(new Reset_Password());
+                        main.showForm(new MainForm());
                     } else if (subMenuIndex == 2) {
-                        main.showForm(new hiii());
+                        main.showForm(new MainForm());
                     } 
                 }
+                else  if (menuIndex == 14) {
+                   
+                      int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Log Out ?");
+        if(Yes == 0){
+            com.raven.main.Main sa = new com.raven.main.Main();
+//        sa.setVisible(true);
+           
+//            sa.dispose();
+        }else{
+             int No=0;
+                if (No == 0){
+                }
+               }
+                }
+            }
+
+            private void dispose() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         menu.addEventShowPopup(new EventShowPopupMenu() {

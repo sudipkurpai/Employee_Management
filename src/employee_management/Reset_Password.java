@@ -6,6 +6,7 @@
 package employee_management;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -204,6 +205,11 @@ public class Reset_Password extends javax.swing.JFrame {
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Submit");
         jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -238,6 +244,8 @@ public class Reset_Password extends javax.swing.JFrame {
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
         // TODO add your handling code here:
 
+  Login l = new Login();
+        l.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Close_bMouseClicked
 
@@ -292,6 +300,14 @@ public class Reset_Password extends javax.swing.JFrame {
          hh.setVisible(true);
          pass1.setEchoChar('*');
     }//GEN-LAST:event_ssMouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        // TODO add your handling code here:
+             JOptionPane.showMessageDialog(null, "Your password changed successfully.");
+             Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel16MouseClicked
 
     /**
      * @param args the command line arguments

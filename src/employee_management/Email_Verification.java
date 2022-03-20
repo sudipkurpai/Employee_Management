@@ -18,6 +18,7 @@ public class Email_Verification extends javax.swing.JFrame {
      */
     public Email_Verification() {
         initComponents();
+        err.setVisible(false);
     }
 
     /**
@@ -95,6 +96,11 @@ public class Email_Verification extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(0, 125, 254));
         jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,6 +134,9 @@ public class Email_Verification extends javax.swing.JFrame {
         Close_b.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Close_b.setPreferredSize(new java.awt.Dimension(40, 40));
         Close_b.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Close_bMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Close_bMouseEntered(evt);
             }
@@ -173,7 +182,7 @@ public class Email_Verification extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(err)
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -214,9 +223,9 @@ public class Email_Verification extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        ////        OTP_V ov = new OTP_V();
-        //        ov.setVisible(true);
-        //        this.dispose();
+       OTP_Validation ov = new OTP_Validation();
+        ov.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered
@@ -228,6 +237,20 @@ public class Email_Verification extends javax.swing.JFrame {
         // TODO add your handling code here:
         Close_b.setForeground(Color.red);
     }//GEN-LAST:event_Close_bMouseExited
+
+    private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
+        // TODO add your handling code here:
+        Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Close_bMouseClicked
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+        // TODO add your handling code here:
+        OTP_Validation ov = new OTP_Validation();
+        ov.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jPanel7MouseClicked
 
     /**
      * @param args the command line arguments

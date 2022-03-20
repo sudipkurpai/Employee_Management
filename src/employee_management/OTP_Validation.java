@@ -6,6 +6,7 @@
 package employee_management;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -142,6 +143,11 @@ public class OTP_Validation extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 125, 254));
         jLabel9.setText("Resend");
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
 
         jPanel7.setBackground(new java.awt.Color(0, 125, 254));
         jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -150,6 +156,11 @@ public class OTP_Validation extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Verify");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -242,6 +253,9 @@ public class OTP_Validation extends javax.swing.JFrame {
         Close_b.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Close_b.setPreferredSize(new java.awt.Dimension(40, 40));
         Close_b.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Close_bMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Close_bMouseEntered(evt);
             }
@@ -310,6 +324,28 @@ public class OTP_Validation extends javax.swing.JFrame {
         // TODO add your handling code here:
         Close_b.setForeground(Color.white);
     }//GEN-LAST:event_Close_bMouseExited
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        // TODO add your handling code here:
+         JOptionPane.showMessageDialog(null, "OTP Resend Successfully");
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
+        // TODO add your handling code here:
+        
+         Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Close_bMouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(null, "OTP verified Successfully");
+        Reset_Password rp = new Reset_Password();
+        rp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
      * @param args the command line arguments
