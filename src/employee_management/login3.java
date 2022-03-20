@@ -13,6 +13,7 @@ import java.awt.Color;
  */
 public class login3 extends javax.swing.JFrame {
 
+
     /**
      * Creates new form login3
      */
@@ -39,8 +40,8 @@ public class login3 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pass = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
@@ -124,9 +125,6 @@ public class login3 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user (1).png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 0, -1, 50));
-
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 125, 254));
@@ -137,6 +135,9 @@ public class login3 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 10, 290, 30));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/man-user.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 0, 40, 50));
 
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 350, 50));
 
@@ -155,8 +156,8 @@ public class login3 extends javax.swing.JFrame {
         });
         jPanel2.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/padlock (3).png"))); // NOI18N
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 50));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/lock.png"))); // NOI18N
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 50));
 
         hide.setForeground(new java.awt.Color(102, 102, 102));
         hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/h.png"))); // NOI18N
