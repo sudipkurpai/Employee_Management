@@ -1,5 +1,4 @@
 package com.raven.main;
-
 import com.raven.component.Header;
 import com.raven.component.Menu;
 import com.raven.event.EventMenuSelected;
@@ -12,8 +11,12 @@ import com.raven.swing.PopupMenu;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;
 import com.raven.swing.icon.IconFontSwing;
 import employee_management.Email_Verification;
-import employee_management.Email_Verification;
-import employee_management.test;
+import employee_management.Login;
+import employee_management.OTP_Validation;
+import employee_management.Reset_Password;
+import employee_management.hiii;
+
+
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,6 +24,7 @@ import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
+
 
 public class Main extends javax.swing.JFrame {
 
@@ -54,8 +58,10 @@ public class Main extends javax.swing.JFrame {
                 }else  if (menuIndex == 1) {
                     if (subMenuIndex == 0) {
                         main.showForm(new Form_Home());
+                    } else if (subMenuIndex == 1) {
+                        main.showForm(new Reset_Password());
                     } else if (subMenuIndex == 2) {
-                        main.showForm(new Email_Verification());
+                        main.showForm(new hiii());
                     } 
                 }
             }
