@@ -18,7 +18,8 @@ public class OTP_V extends javax.swing.JFrame {
      */
     public OTP_V() {
         initComponents();
-        err.setVisible(false);  
+        err.setVisible(false); 
+        
         
         
         
