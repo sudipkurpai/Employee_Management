@@ -18,7 +18,7 @@ public class Email_Verification extends javax.swing.JFrame {
      */
     public Email_Verification() {
         initComponents();
-        err.setVisible(true);
+        err.setVisible(false);
     }
 
     /**
