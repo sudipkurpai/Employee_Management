@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Employee_Management/src/com/raven/component/Profile.java</file>
-            <file>file:/E:/Employee_Management/src/com/raven/swing/table/Action.java</file>
-            <file>file:/E:/Employee_Management/src/com/raven/form/Form_Home.java</file>
-            <file>file:/E:/Employee_Management/src/employee_management/Login.java</file>
-            <file>file:/E:/Employee_Management/src/com/raven/model/ModelStudent.java</file>
-            <file>file:/E:/Employee_Management/src/com/raven/main/Main.java</file>
-            <file>file:/E:/Employee_Management/src/com/raven/component/Menu.java</file>
+            <file>file:/E:/Employee_Management/src/employee_management/Employee_list.java</file>
+            <file>file:/E:/Employee_Management/src/employee_management/Cust_List.java</file>
+            <file>file:/E:/Employee_Management/src/employee_management/Assign.java</file>
         </group>
     </open-files>
 </project-private>
