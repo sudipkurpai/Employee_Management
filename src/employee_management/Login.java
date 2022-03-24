@@ -9,7 +9,11 @@ import com.raven.form.Form_Home;
 import com.raven.form.MainForm;
 import static com.raven.main.Main.main;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import static org.joda.time.PeriodType.time;
 
 /**
  *
@@ -45,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         pass = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
@@ -137,16 +141,16 @@ public class Login extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user (1).png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 0, -1, 50));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 125, 254));
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        email.setBackground(new java.awt.Color(255, 255, 255));
+        email.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        email.setForeground(new java.awt.Color(0, 125, 254));
+        email.setBorder(null);
+        email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                emailActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 10, 290, 30));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 10, 290, 30));
 
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 350, 50));
 
@@ -225,9 +229,9 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_emailActionPerformed
 
     private void hideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideMouseClicked
         // TODO add your handling code here:
@@ -272,9 +276,82 @@ public class Login extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
-        com.raven.main.Main sa = new com.raven.main.Main();
-        sa.setVisible(true);
-        this.dispose();
+//        com.raven.main.Main sa = new com.raven.main.Main();
+//        sa.setVisible(true);
+//        this.dispose();
+
+     String p_email = email.getText();
+        String p_pass = pass.getText();
+        String name= null;
+        String mng_Id = null;
+        String eml= null;
+        String phone = null;
+        try {
+            //  Data fetch from database
+            String sql = "Select * from admin Where mng_id = ?";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setString(1,p_email);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+              //  
+                eml =rs.getString("email");
+             //   System.out.println("EMAILLLLLLLL "+eml);
+                phone =rs.getString("Phone");
+             //   System.out.println("EMAILLLLLLLL "+phone);
+                String fname =rs.getString("fname");
+              //  System.out.println("FIRST NAME "+fname);
+                String lname =rs.getString("fname");
+               // System.out.println("LAST NAME "+lname);
+                name = fname+" "+lname;
+               // System.out.println("FULL NAME "+name);
+                mng_Id =rs.getString("mng_id");
+               // System.out.println("MNGGGGGGGGGGGGG "+mng_Id);
+                rs.close();
+                ps.close();
+            }else{
+                JOptionPane.showMessageDialog(null, "Enter Correct User Name");
+              //  System.out.println("Enter Correct User Name");
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+        try{
+            if(p_email.equals("")||p_pass.equals("")){
+                JOptionPane.showMessageDialog(this, "Fill up all field first");
+            }else if(REGISTRATION_DATAOBEJECT.validate(p_email, p_pass)){
+                //String timeee = time;
+               // System.out.println("11111111111111" +timeee);
+               // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
+                email.setForeground(Color.GREEN);
+                pass.setForeground(Color.GREEN);                
+                JOptionPane.showMessageDialog(null, "Login Successfully");
+                
+                com.raven.main.Main sa = new com.raven.main.Main();
+                sa.setVisible(true);
+                this.dispose();
+            //    System.out.println("2222222222222222" +timeee);
+                
+               // dm.mngname(name,mng_Id,eml,phone,date,timeee);  
+               
+            }else{
+                email.setForeground(Color.RED);
+                pass.setForeground(Color.RED);
+                JOptionPane.showMessageDialog(null,"Enter Correct Details", "Login Error", JOptionPane.ERROR_MESSAGE);
+               
+//                email.setText("Manager ID");
+//                pass.setText("Password");
+//                pass.setEchoChar((char)0);
+//                email.setForeground(new Color(128,128,128));
+//                pass.setForeground(new Color(128,128,128));
+            }
+        }catch (Exception e){
+            System.out.println("Exception -"+e);
+        }  
+
+
+
+
  
     }//GEN-LAST:event_jLabel13MouseClicked
 
@@ -326,6 +403,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close_b;
     private javax.swing.JPanel Close_bb;
+    private javax.swing.JTextField email;
     private javax.swing.JLabel hide;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -340,7 +418,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPasswordField pass;
     private javax.swing.JLabel show;
     // End of variables declaration//GEN-END:variables
