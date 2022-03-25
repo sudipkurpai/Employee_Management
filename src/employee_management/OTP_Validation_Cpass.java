@@ -69,7 +69,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
              String newline = System.lineSeparator();
           msc = "YOUR OTP FOR CHANGE PASSWORD IS "+otp+" ." +newline + newline + newline +"THANK YOU." ;
           
-           // MAIL.send(emll,"Welcome"+" "+Name, msc);
+           MAIL.send(emll,"Welcome"+" "+Name, msc);
             return a;
             //JOptionPane.showMessageDialog(null, "OTP Send To "+" "+Name+" " +"By Email");
      }
@@ -116,16 +116,16 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 3, 3, 3, new java.awt.Color(0, 125, 254)));
+        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 3, 3, 3, new java.awt.Color(47, 68, 187)));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel2.setForeground(new java.awt.Color(47, 68, 187));
         jLabel2.setText("OTP");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel3.setForeground(new java.awt.Color(47, 68, 187));
         jLabel3.setText("Verification");
 
         jLabel4.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
@@ -139,7 +139,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         jLabel5.setText("sent you on your email address.");
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254), 2));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(47, 68, 187), 2));
 
         pass.setBackground(new java.awt.Color(255, 255, 255));
         pass.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
@@ -193,7 +193,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         jLabel8.setText("If you don't recive a code!");
 
         jLabel9.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel9.setForeground(new java.awt.Color(47, 68, 187));
         jLabel9.setText("Resend");
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -202,7 +202,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
             }
         });
 
-        jPanel7.setBackground(new java.awt.Color(0, 125, 254));
+        jPanel7.setBackground(new java.awt.Color(47, 68, 187));
         jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel7.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
@@ -284,7 +284,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
-        errssdsd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/otp_verified.png"))); // NOI18N
+        errssdsd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/otp_verrpng.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -306,7 +306,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 1020, 640));
 
-        jPanel2.setBackground(new java.awt.Color(0, 125, 254));
+        jPanel2.setBackground(new java.awt.Color(47, 68, 187));
 
         Close_b.setFont(new java.awt.Font("Dialog", 1, 40)); // NOI18N
         Close_b.setForeground(new java.awt.Color(255, 255, 255));
@@ -391,7 +391,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        ;
+        
         if( gen_otp()=="yes"){
            JOptionPane.showMessageDialog(null, "OTP Resend To "+" "+Name+" " +"By Email Successfully");  
          }

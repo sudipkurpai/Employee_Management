@@ -61,7 +61,7 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(new java.awt.Color(47, 68, 187));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Close_bb.setBackground(new java.awt.Color(255, 255, 255));
@@ -104,27 +104,27 @@ public class Login extends javax.swing.JFrame {
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 740, 740));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Welcome Back!");
         jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Login to Continue your Dashboard");
         jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password:");
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 330, 110, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Username:");
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 230, 110, 20));
 
         jLabel12.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Forgot Password?");
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {

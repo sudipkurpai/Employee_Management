@@ -6,6 +6,13 @@
 package employee_management;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +44,7 @@ public class Email_Verification extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        eml = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -70,10 +77,10 @@ public class Email_Verification extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 125, 254));
-        jTextField1.setBorder(null);
+        eml.setBackground(new java.awt.Color(255, 255, 255));
+        eml.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        eml.setForeground(new java.awt.Color(0, 125, 254));
+        eml.setBorder(null);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/email__n.png"))); // NOI18N
 
@@ -85,13 +92,13 @@ public class Email_Verification extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1)
+                .addComponent(eml)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-            .addComponent(jTextField1)
+            .addComponent(eml)
         );
 
         jPanel7.setBackground(new java.awt.Color(0, 125, 254));
@@ -223,9 +230,54 @@ public class Email_Verification extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-       OTP_Validation ov = new OTP_Validation();
-        ov.setVisible(true);
-        this.dispose();
+       err.setVisible(false);
+      String eml=this.eml.getText();
+      
+      
+        String emil= null;
+        
+     if(eml.equals("")){
+         err.setVisible(true);
+         //JOptionPane.showMessageDialog(null,"Enter Your Email Address First","Error",JOptionPane.ERROR_MESSAGE);
+         err.setText("Enter Your Email Address First");
+     }else{
+          try {
+              String sql = "Select * from admin Where mng_id = ? or email = ? ";
+              Connection con=DATABASE_CONNECTION.getConnection();
+              PreparedStatement ps=con.prepareStatement(sql);
+              ps.setString(1,eml);
+               ps.setString(2,eml);
+              ResultSet rs=ps.executeQuery();
+              if(rs.next()){
+                  //
+                  emil =rs.getString("email");
+                 String fn =rs.getString("fname");
+                 String ln =rs.getString("lname");
+                  emil =rs.getString("email");
+                  String Name=fn+ln;
+
+                  //   System.out.println("EMAILLLLLLLL "+eml);
+                 
+                  rs.close();
+                  ps.close();
+                  
+                   OTP_Validation ov = new OTP_Validation();
+     //  ov.gett(emil,Name);
+         ov.setVisible(true);
+       this.dispose();
+              }else{
+                  err.setVisible(true);
+         err.setText("Please enter valid email address");
+  
+              }
+              
+              
+              
+      
+          } catch (SQLException ex) {
+              Logger.getLogger(Email_Verification.class.getName()).log(Level.SEVERE, null, ex);
+          }
+     }
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered
@@ -289,6 +341,7 @@ public class Email_Verification extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close_b;
+    private javax.swing.JTextField eml;
     private javax.swing.JLabel err;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -300,6 +353,5 @@ public class Email_Verification extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

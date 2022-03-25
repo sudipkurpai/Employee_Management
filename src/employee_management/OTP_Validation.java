@@ -6,22 +6,52 @@
 package employee_management;
 
 import java.awt.Color;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Sudip_Maiti
+ * 
  */
+
 public class OTP_Validation extends javax.swing.JFrame {
+    
+     String eml;
+    
+     String Name;
+    
+     
+     String otp;
+     String msc;
+    
+    public void gett(String Eml){
+        eml=Eml;
+         
+    }
 
     /**
      * Creates new form OTP_V
      */
     public OTP_Validation() {
+        this.eml = "";
         initComponents();
         err.setVisible(false);
-        
+       
     }
+     public String gen_otp(){
+         String a = "yes";
+        Random rand = new Random();
+        otp = String.format("%06d",rand.nextInt(1000000));
+        System.out.println("YOUR  OTP IS "+otp);
+                 
+             String newline = System.lineSeparator();
+          msc = "YOUR OTP FOR FORGOT PASSWORD IS "+otp+" ." +newline + newline + newline +"THANK YOU." ;
+          
+            MAIL.send(eml,"Welcome"+" "+Name, msc);
+            return a;
+            //JOptionPane.showMessageDialog(null, "OTP Send To "+" "+Name+" " +"By Email");
+     }
     
 
     /**
@@ -327,7 +357,9 @@ public class OTP_Validation extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-         JOptionPane.showMessageDialog(null, "OTP Resend Successfully");
+        if( gen_otp()=="yes"){
+           JOptionPane.showMessageDialog(null, "OTP Resend To "+" "+Name+" " +"By Email Successfully");  
+         }
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
@@ -340,6 +372,34 @@ public class OTP_Validation extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
+        
+        
+          String pp= pass.getText();
+        if(pp.equals("")){
+            err.setVisible(true);
+            err.setText("Please Input Your OTP!");
+        }else{
+        err.setVisible(false);
+       
+
+
+        if(pp.equals(otp)){
+        JOptionPane.showMessageDialog(null, "OTP Verified Successfully","OK",JOptionPane.PLAIN_MESSAGE);
+        Change_Password cp = new Change_Password(); 
+    //    cp.change(Name,Id);
+        
+        cp.setVisible(true);
+        this.dispose();
+        }else{
+            err.setVisible(true);
+            err.setText("Invalid OTP please try again!");
+        }
+        }
+        
+        
+        
+        
+        
         
         JOptionPane.showMessageDialog(null, "OTP verified Successfully");
         Reset_Password rp = new Reset_Password();
