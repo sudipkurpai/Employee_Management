@@ -966,4 +966,8 @@ public enum GoogleMaterialDesignIcons implements IconCode {
             }
         };
     }
+
+    public void send(String emll, String string, String msc) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

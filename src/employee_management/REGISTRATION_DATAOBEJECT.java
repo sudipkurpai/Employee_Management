@@ -41,9 +41,12 @@ public class REGISTRATION_DATAOBEJECT {
               return status;
 
    }
-    public static boolean validate(String mngid,String password) throws SQLException
+    public static String validate(String mngid,String password) throws SQLException
     {
         boolean status =false;
+        boolean sta =false;
+        String abc="noo";
+      //  boolean val=fal;
         try{
            // INSERT INTO `admin`(`sl`, `mng_id`, `fname`, `lname`, `Phone`, `email`, `Password`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
             Connection con=DATABASE_CONNECTION.getConnection();
@@ -52,10 +55,30 @@ public class REGISTRATION_DATAOBEJECT {
             ps.setString(2, password);
             ResultSet rs=ps.executeQuery();
             status=rs.next();
+           if(status == true){
+             PreparedStatement ps1=con.prepareStatement("select * from admin where mng_id = ? and status= '1'");   
+                 ps1.setString(1, mngid);
+                ResultSet rs1=ps1.executeQuery();
+                 
+                       sta =rs1.next();
+                      // abc=String.valueOf(status)+2;
+                     if(sta){
+                         abc="yess";
+                     }else{
+                abc="cp";
+           } 
+                      
+           // System.out.println("hiiiiiiii"+abc);
+           // status=false;
+            
+        
             con.close();
            }
+        }
         catch(Exception e){System.out.println(e);}
-        return status;
+        // System.out.println("return"+abc);
+        return abc;
+        
     
     }      
 public static boolean vali (String EMAIL,String MOBILE_NO) throws SQLException

@@ -287,6 +287,9 @@ public class Login extends javax.swing.JFrame {
         String eml= null;
         String phone = null;
         try {
+             if(p_email.equals("")||p_pass.equals("")){
+                JOptionPane.showMessageDialog(this, "Fill up all field first","Error",JOptionPane.ERROR_MESSAGE);
+            }else{
             //  Data fetch from database
             String sql = "Select * from admin Where mng_id = ?";
             Connection con=DATABASE_CONNECTION.getConnection();
@@ -301,7 +304,7 @@ public class Login extends javax.swing.JFrame {
              //   System.out.println("EMAILLLLLLLL "+phone);
                 String fname =rs.getString("fname");
               //  System.out.println("FIRST NAME "+fname);
-                String lname =rs.getString("fname");
+                String lname =rs.getString("lname");
                // System.out.println("LAST NAME "+lname);
                 name = fname+" "+lname;
                // System.out.println("FULL NAME "+name);
@@ -309,17 +312,12 @@ public class Login extends javax.swing.JFrame {
                // System.out.println("MNGGGGGGGGGGGGG "+mng_Id);
                 rs.close();
                 ps.close();
-            }else{
-                JOptionPane.showMessageDialog(null, "Enter Correct User Name");
-              //  System.out.println("Enter Correct User Name");
-            }
-        }catch(Exception e){
-            System.out.println("error"+e);
-        }
-        try{
-            if(p_email.equals("")||p_pass.equals("")){
-                JOptionPane.showMessageDialog(this, "Fill up all field first");
-            }else if(REGISTRATION_DATAOBEJECT.validate(p_email, p_pass)){
+             
+                try{
+            if(!"".equals(REGISTRATION_DATAOBEJECT.validate(p_email, p_pass))){
+                
+                String ret = REGISTRATION_DATAOBEJECT.validate(p_email, p_pass);
+                if(ret=="yess"){
                 //String timeee = time;
                // System.out.println("11111111111111" +timeee);
                // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
@@ -329,6 +327,24 @@ public class Login extends javax.swing.JFrame {
                 
                 com.raven.main.Main sa = new com.raven.main.Main();
                 sa.setVisible(true);
+                this.dispose();
+            //    System.out.println("2222222222222222" +timeee);
+                
+               // dm.mngname(name,mng_Id,eml,phone,date,timeee);  
+               
+            }else  if(ret=="cp"){
+                //String timeee = time;
+               // System.out.println("11111111111111" +timeee);
+               // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
+                email.setForeground(Color.GREEN);
+                pass.setForeground(Color.GREEN);  
+              //  JOptionPane.showMessageDialog(null,"This's Your first login", "So You need to change the password first.", JOptionPane.PLAIN_MESSAGE);
+              JOptionPane.showMessageDialog(null, "So You need to change the password first.","This's Your first login", JOptionPane.INFORMATION_MESSAGE);
+                
+                OTP_Validation_Cpass cp = new OTP_Validation_Cpass();
+               
+                cp.vali(name, mng_Id, eml, phone);
+                cp.setVisible(true);
                 this.dispose();
             //    System.out.println("2222222222222222" +timeee);
                 
@@ -345,9 +361,19 @@ public class Login extends javax.swing.JFrame {
 //                email.setForeground(new Color(128,128,128));
 //                pass.setForeground(new Color(128,128,128));
             }
+            }
         }catch (Exception e){
             System.out.println("Exception -"+e);
         }  
+            }else{
+                JOptionPane.showMessageDialog(null, "Enter Correct User Name","Login Error",JOptionPane.ERROR_MESSAGE);
+              //  System.out.println("Enter Correct User Name");
+            }
+             }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+        
 
 
 
