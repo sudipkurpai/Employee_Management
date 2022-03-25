@@ -140,7 +140,7 @@
                   <Font name="Arial" size="40" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fe" green="7d" red="0" type="rgb"/>
+                  <Color blue="bb" green="44" red="2f" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="OTP"/>
               </Properties>
@@ -151,7 +151,7 @@
                   <Font name="Arial" size="40" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fe" green="7d" red="0" type="rgb"/>
+                  <Color blue="bb" green="44" red="2f" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Verification"/>
               </Properties>

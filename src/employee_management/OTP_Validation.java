@@ -98,11 +98,11 @@ public class OTP_Validation extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel2.setForeground(new java.awt.Color(47, 68, 187));
         jLabel2.setText("OTP");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel3.setForeground(new java.awt.Color(47, 68, 187));
         jLabel3.setText("Verification");
 
         jLabel4.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
