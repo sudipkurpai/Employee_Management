@@ -274,7 +274,7 @@ public class OTP_Validation extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 1020, 640));
 
-        jPanel2.setBackground(new java.awt.Color(0, 125, 254));
+        jPanel2.setBackground(new java.awt.Color(47, 68, 187));
 
         Close_b.setFont(new java.awt.Font("Dialog", 1, 40)); // NOI18N
         Close_b.setForeground(new java.awt.Color(255, 255, 255));
