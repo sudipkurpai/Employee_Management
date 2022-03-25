@@ -93,7 +93,7 @@ public class OTP_Validation extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 3, 3, 3, new java.awt.Color(0, 125, 254)));
+        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 3, 3, 3, new java.awt.Color(47, 68, 187)));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -179,7 +179,7 @@ public class OTP_Validation extends javax.swing.JFrame {
             }
         });
 
-        jPanel7.setBackground(new java.awt.Color(0, 125, 254));
+        jPanel7.setBackground(new java.awt.Color(47, 68, 187));
         jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
