@@ -252,7 +252,7 @@ public class OTP_Validation extends javax.swing.JFrame {
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
-        errssdsd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/otp_verified.png"))); // NOI18N
+        errssdsd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/otp_verrpng.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
