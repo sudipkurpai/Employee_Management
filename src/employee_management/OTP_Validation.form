@@ -188,7 +188,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder thickness="2">
-                      <Color PropertyName="color" blue="fe" green="7d" red="0" type="rgb"/>
+                      <Color PropertyName="color" blue="bb" green="44" red="2f" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>

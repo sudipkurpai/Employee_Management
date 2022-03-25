@@ -116,7 +116,7 @@ public class OTP_Validation extends javax.swing.JFrame {
         jLabel5.setText("sent you on your email address.");
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254), 2));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(47, 68, 187), 2));
 
         pass.setBackground(new java.awt.Color(255, 255, 255));
         pass.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
