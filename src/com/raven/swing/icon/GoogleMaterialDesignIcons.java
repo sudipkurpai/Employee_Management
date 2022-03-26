@@ -598,7 +598,9 @@ public enum GoogleMaterialDesignIcons implements IconCode {
     PAUSE_CIRCLE_FILLED('\uE035'),
     PAUSE_CIRCLE_OUTLINE('\uE036'),
     PAYMENT('\uE8A1'),
-    PEOPLE('\uE7FB'),
+    //uE7FB
+    
+    PEOPLE('\ue7fB'),
     PEOPLE_OUTLINE('\uE7FC'),
     PERM_CAMERA_MIC('\uE8A2'),
     PERM_CONTACT_CALENDAR('\uE8A3'),

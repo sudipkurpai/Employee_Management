@@ -254,7 +254,7 @@ public class Email_Verification extends javax.swing.JFrame {
                  String fn =rs.getString("fname");
                  String ln =rs.getString("lname");
                   emil =rs.getString("email");
-                  String Name=fn+ln;
+                  String Name=fn+" "+ln;
 
                   //   System.out.println("EMAILLLLLLLL "+eml);
                  
@@ -262,7 +262,7 @@ public class Email_Verification extends javax.swing.JFrame {
                   ps.close();
                   
                    OTP_Validation ov = new OTP_Validation();
-     //  ov.gett(emil,Name);
+       ov.gett(emil,Name);
          ov.setVisible(true);
        this.dispose();
               }else{

@@ -63,14 +63,15 @@ public class Form_Home extends javax.swing.JPanel {
     }
 
     private void initCardData() {
+        String ab= "10";
         Icon icon1 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card1.setData(new ModelCard("New Student", 5100, 20, icon1));
-        Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.MONETIZATION_ON, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card2.setData(new ModelCard("Income", 2000, 60, icon2));
-        Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SHOPPING_BASKET, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card3.setData(new ModelCard("Expense", 3000, 80, icon3));
-        Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.BUSINESS_CENTER, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
-        card4.setData(new ModelCard("Other Income", 550, 95, icon4));
+        card1.setData(new ModelCard("Total Customer", Double.parseDouble(ab), icon1));
+        Icon icon2 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
+        card2.setData(new ModelCard("Total Employee", 2000, icon2));
+        Icon icon3 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.LIST, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
+        card3.setData(new ModelCard("Total Due", 3000, icon3));
+        Icon icon4 = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.ATTACH_MONEY, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
+        card4.setData(new ModelCard("Total Income", 550, icon4));
     }
 
     private void initNoticeBoard() {

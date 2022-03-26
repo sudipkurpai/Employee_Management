@@ -390,7 +390,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
         
-        
+        err.setVisible(false);
         
         if( gen_otp()=="yes"){
            JOptionPane.showMessageDialog(null, "OTP Resend To "+" "+Name+" " +"By Email Successfully");  

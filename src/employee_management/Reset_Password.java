@@ -5,7 +5,13 @@
  */
 package employee_management;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +19,11 @@ import javax.swing.JOptionPane;
  * @author ganesh_pradhan
  */
 public class Reset_Password extends javax.swing.JFrame {
+    String eml=null;
+    public  void seet(String id) {
+        eml= id;
+        
+    }
 
     /**
      * Creates new form resetpassword
@@ -303,10 +314,50 @@ public class Reset_Password extends javax.swing.JFrame {
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         // TODO add your handling code here:
-             JOptionPane.showMessageDialog(null, "Your password changed successfully.");
-             Login l = new Login();
-        l.setVisible(true);
-        this.dispose();
+        String p1= pass1.getText();
+        String p2 = pass2.getText();
+        if(p1.equals("")||p2.equals("")){
+         JOptionPane.showMessageDialog(null, "Please Fill The All Fild First");
+        }else{
+            if(p1.equals(p2)){
+              int sta=0;
+            try {
+               Connection con=DATABASE_CONNECTION.getConnection(); 
+           //  UPDATE `admin` SET `Password`='123' WHERE `mng_id`='123';
+           //String v ="1";
+                PreparedStatement ps=con.prepareStatement("UPDATE admin set Password =?  where email =?");
+                   
+                   ps.setString(1, p1);
+                   //ps.setString(2, v);
+                   System.out.println("");
+                           
+                   ps.setString(2, eml);
+                   
+                   sta=ps.executeUpdate();
+                   con.close();
+                 
+                    if(sta==1){
+                    
+                    String newline = System.lineSeparator();
+                    JOptionPane.showMessageDialog(null, "Your password reset successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
+                    Login l = new Login();
+                    l.setVisible(true);
+                    this.dispose();
+                }
+             } catch (SQLException ex) {
+                Logger.getLogger(Change_Password.class.getName()).log(Level.SEVERE, null, ex);
+            }           
+                
+                
+                
+            }else{
+                      JOptionPane.showMessageDialog(null, "Both Password must be same");
+   
+            }
+        }
+        
+        
+          
     }//GEN-LAST:event_jLabel16MouseClicked
 
     /**

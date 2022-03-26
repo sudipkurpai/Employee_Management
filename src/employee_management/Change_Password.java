@@ -347,7 +347,7 @@ public class Change_Password extends javax.swing.JFrame {
                    
                    sta=ps.executeUpdate();
                    con.close();
-                   System.out.println("sta"+sta);
+                  // System.out.println("sta"+sta);
                     if(sta==1){
                     
                     String newline = System.lineSeparator();

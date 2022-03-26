@@ -25,9 +25,13 @@ public class OTP_Validation extends javax.swing.JFrame {
      String otp;
      String msc;
     
-    public void gett(String Eml){
+    public void gett(String Eml,String nmm){
         eml=Eml;
-         
+         Name=nmm;
+        String xx = gen_otp();
+         if( xx=="yes"){
+           JOptionPane.showMessageDialog(null, "OTP Send To "+" "+Name+" " +"By Email");  
+         }
     }
 
     /**
@@ -357,6 +361,7 @@ public class OTP_Validation extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+        err.setVisible(false);
         if( gen_otp()=="yes"){
            JOptionPane.showMessageDialog(null, "OTP Resend To "+" "+Name+" " +"By Email Successfully");  
          }
@@ -385,10 +390,10 @@ public class OTP_Validation extends javax.swing.JFrame {
 
         if(pp.equals(otp)){
         JOptionPane.showMessageDialog(null, "OTP Verified Successfully","OK",JOptionPane.PLAIN_MESSAGE);
-        Change_Password cp = new Change_Password(); 
-    //    cp.change(Name,Id);
+        Reset_Password rp = new Reset_Password(); 
+        rp.seet(eml);
         
-        cp.setVisible(true);
+        rp.setVisible(true);
         this.dispose();
         }else{
             err.setVisible(true);
@@ -401,10 +406,7 @@ public class OTP_Validation extends javax.swing.JFrame {
         
         
         
-        JOptionPane.showMessageDialog(null, "OTP verified Successfully");
-        Reset_Password rp = new Reset_Password();
-        rp.setVisible(true);
-        this.dispose();
+      
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
