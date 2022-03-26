@@ -8,3 +8,4 @@ public interface EventAction {
 
     public void update(ModelStudent student);
 }
+
