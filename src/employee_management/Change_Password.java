@@ -217,19 +217,19 @@ public class Change_Password extends javax.swing.JFrame {
 
         jPanel8.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 350, 50));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(47, 68, 187));
         jLabel4.setText("Change");
         jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 320, 50));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(47, 68, 187));
         jLabel2.setText("Your Password");
         jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, 50));
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 530, 560));
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 520, 560));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 1070, 580));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 1060, 630));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -274,7 +274,7 @@ public class Change_Password extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 760));
 
-        setSize(new java.awt.Dimension(1200, 760));
+        setSize(new java.awt.Dimension(1200, 758));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
