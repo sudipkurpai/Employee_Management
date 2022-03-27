@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 
@@ -47,7 +48,25 @@ public class Change_Password extends javax.swing.JFrame {
     }
     public Change_Password() {
         initComponents();
+          Login l = new Login();
+         
+          System.out.println( l.getClass().getSimpleName());
+          String aa =l.getClass().toString();
+         
+         Succes wr = new Succes();
+             wr.setVisible(true);
+             //Login l = new Login();
+              
+            wr.msg("<html>Your password changed successfully \n You Can Login Now.  </html>",aa);
+      
     }
+    private static final String A ="^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|" +
+			"(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|" +
+			"(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|" +
+			"(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})" +
+			"[A-Za-z0-9!~<>,;:_=?*+#.\"&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]" +
+			"{8,32}$";
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile(A);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -371,9 +390,69 @@ public class Change_Password extends javax.swing.JFrame {
 
     private void Close_bMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseExited
         // TODO add your handling code here:
+<<<<<<< HEAD
         Close_bb.setBackground(new Color(255, 255, 255));
         Close_b.setForeground(new Color(255,0,0));
     }//GEN-LAST:event_Close_bMouseExited
+=======
+        String pp1= pass1.getText();
+        String pp2=pass2.getText();
+         if(pp1.equals("")||pp2.equals("")){
+//             Change_Password a = new Change_Password();   // Any class A
+//Class c = a.getClass();
+             warning wr = new warning();
+             wr.setVisible(true);
+             wr.msg("<html>Please Fill The All Fild First </html>");
+           //  this.hide();
+        // JOptionPane.showMessageDialog(null,"Please Fill The All Fild First" );
+        }else{
+        if(PASSWORD_PATTERN.matcher(pp1).matches()){
+        if(pp1.equals(pp2)){
+            int sta=0;
+            try {
+               Connection con=DATABASE_CONNECTION.getConnection(); 
+           //  UPDATE `admin` SET `Password`='123' WHERE `mng_id`='123';
+           //String v ="1";
+                PreparedStatement ps=con.prepareStatement("UPDATE admin set Password =?, status ="+'1'+" where mng_id = ?");
+                   
+                   ps.setString(1, pp1);
+                   //ps.setString(2, v);
+                   ps.setString(2, Id);
+                   
+                   sta=ps.executeUpdate();
+                   con.close();
+                  // System.out.println("sta"+sta);
+                    if(sta==1){
+                      Succes wr = new Succes();
+             wr.setVisible(true);
+              Login l = new Login();
+              
+             wr.msg("<html>Your password changed successfully \n You Can Login Now.  </html>",l.toString());
+                    String newline = System.lineSeparator();
+                  //  JOptionPane.showMessageDialog(null, "Your password changed successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
+                   
+                   // l.setVisible(true);
+                   // this.dispose();
+                }
+             } catch (SQLException ex) {
+                Logger.getLogger(Change_Password.class.getName()).log(Level.SEVERE, null, ex);
+            }        
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null,"Both password must be same","Error",JOptionPane.ERROR_MESSAGE);
+                }   
+            
+            }else {
+               JOptionPane.showMessageDialog(null, "Password between 8 and 32 characters\nPassword must contain at least one lowercase letter\none uppercase letter\none numeric digit\none special character.");
+        }
+        }
+           
+        
+        
+        
+             
+    }//GEN-LAST:event_jLabel16MouseClicked
+>>>>>>> d8ad8332110e225d75ae8bd182cf5f091bd6847b
 
     /**
      * @param args the command line arguments
