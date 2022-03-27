@@ -37,31 +37,155 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        Close_bb = new javax.swing.JPanel();
-        Close_b = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         pass = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
         hide = new javax.swing.JLabel();
         show = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        Close_bb = new javax.swing.JPanel();
+        Close_b = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.setBackground(new java.awt.Color(47, 68, 187));
+        jPanel1.setBackground(new java.awt.Color(47, 68, 187));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(47, 68, 187)));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Tablet login-rafiki (1).png"))); // NOI18N
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 600, 550));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(47, 68, 187));
+        jLabel2.setText("Welcome Back!");
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 50));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(47, 68, 187));
+        jLabel3.setText("Login to Continue your Dashboard");
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
+
+        jLabel12.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Forgot Password?");
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 120, 40));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-user-41.png"))); // NOI18N
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 50));
+
+        email.setBackground(new java.awt.Color(255, 255, 255));
+        email.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        email.setForeground(new java.awt.Color(204, 204, 204));
+        email.setText("Enter Username");
+        email.setBorder(null);
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
+        jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 10, 290, 30));
+
+        jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 350, 50));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pass.setBackground(new java.awt.Color(255, 255, 255));
+        pass.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        pass.setForeground(new java.awt.Color(204, 204, 204));
+        pass.setText("Enter Your Password");
+        pass.setBorder(null);
+        pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passActionPerformed(evt);
+            }
+        });
+        jPanel4.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/lock.png"))); // NOI18N
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 50));
+
+        hide.setForeground(new java.awt.Color(102, 102, 102));
+        hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/visibility (1).png"))); // NOI18N
+        hide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hide.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                hideMouseClicked(evt);
+            }
+        });
+        jPanel4.add(hide, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
+
+        show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/visibility.png"))); // NOI18N
+        show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        show.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                showMouseClicked(evt);
+            }
+        });
+        jPanel4.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
+
+        jPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 350, 50));
+
+        jPanel6.setBackground(new java.awt.Color(47, 68, 187));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setFont(new java.awt.Font("Consolas", 1, 28)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Login");
+        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 50));
+
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 350, -1));
+
+        jLabel6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setText("Enter Your Password");
+        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 230, 30));
+
+        jLabel7.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setText("Enter Username");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 190, 30));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 58, 1057, 582));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Close_bb.setBackground(new java.awt.Color(255, 255, 255));
         Close_bb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -97,288 +221,15 @@ public class Login extends javax.swing.JFrame {
             .addComponent(Close_b, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel5.add(Close_bb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 40, 40));
+        jPanel2.add(Close_bb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 0, 40, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Tablet login-rafiki.png"))); // NOI18N
-        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 740, 740));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Welcome Back!");
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 50));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 710));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Login to Continue your Dashboard");
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
-
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Password:");
-        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 330, 110, 20));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Username:");
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 230, 110, 20));
-
-        jLabel12.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Forgot Password?");
-        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
-            }
-        });
-        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 120, 40));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user (1).png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 0, -1, 50));
-
-        email.setBackground(new java.awt.Color(255, 255, 255));
-        email.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        email.setForeground(new java.awt.Color(0, 125, 254));
-        email.setBorder(null);
-        email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
-            }
-        });
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 10, 290, 30));
-
-        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 350, 50));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        pass.setBackground(new java.awt.Color(255, 255, 255));
-        pass.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        pass.setForeground(new java.awt.Color(0, 125, 254));
-        pass.setBorder(null);
-        pass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passActionPerformed(evt);
-            }
-        });
-        jPanel2.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/padlock (3).png"))); // NOI18N
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 50));
-
-        hide.setForeground(new java.awt.Color(102, 102, 102));
-        hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/h.png"))); // NOI18N
-        hide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        hide.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                hideMouseClicked(evt);
-            }
-        });
-        jPanel2.add(hide, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
-
-        show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/s.png"))); // NOI18N
-        show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        show.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                showMouseClicked(evt);
-            }
-        });
-        jPanel2.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
-
-        jPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 350, 50));
-
-        jPanel3.setBackground(new java.awt.Color(0, 125, 254));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel13.setFont(new java.awt.Font("Consolas", 1, 28)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Login");
-        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel13MouseClicked(evt);
-            }
-        });
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 50));
-
-        jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 350, -1));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 741, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        setSize(new java.awt.Dimension(1210, 741));
+        setSize(new java.awt.Dimension(1196, 711));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passActionPerformed
-
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-
-    private void hideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideMouseClicked
-        // TODO add your handling code here:
-         hide.setVisible(false);
-       show.setVisible(true);
-       pass.setEchoChar((char)0);
-    }//GEN-LAST:event_hideMouseClicked
-
-    private void showMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showMouseClicked
-        // TODO add your handling code here:
-     show.setVisible(false);
-         hide.setVisible(true);
-         pass.setEchoChar('*');
-    }//GEN-LAST:event_showMouseClicked
-
-    private void Close_bMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseExited
-        // TODO add your handling code here:
-        Close_bb.setBackground(new Color(255, 255, 255));
-        Close_b.setForeground(new Color(255,0,0));
-    }//GEN-LAST:event_Close_bMouseExited
-
-    private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered
-        // TODO add your handling code here:
-        Close_bb.setBackground(new Color(255, 0, 0));
-        Close_b.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Close_bMouseEntered
-
-    private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
-        // TODO add your handling code here:
- int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Close This Application ?");
-        if(Yes == 0){
-            
-            
-            this.dispose();
-        }else{
-             int No=0;
-                if (No == 0){
-                }
-               }
-     
-    }//GEN-LAST:event_Close_bMouseClicked
-
-    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        // TODO add your handling code here:
-//        com.raven.main.Main sa = new com.raven.main.Main();
-//        sa.setVisible(true);
-//        this.dispose();
-
-     String p_email = email.getText();
-        String p_pass = pass.getText();
-        String name= null;
-        String mng_Id = null;
-        String eml= null;
-        String phone = null;
-        try {
-             if(p_email.equals("")||p_pass.equals("")){
-                JOptionPane.showMessageDialog(this, "Fill up all field first","Error",JOptionPane.ERROR_MESSAGE);
-            }else{
-            //  Data fetch from database
-            String sql = "Select * from admin Where mng_id = ?";
-            Connection con=DATABASE_CONNECTION.getConnection();
-            PreparedStatement ps=con.prepareStatement(sql);
-            ps.setString(1,p_email);
-            ResultSet rs=ps.executeQuery();
-            if(rs.next()){
-              //  
-                eml =rs.getString("email");
-             //   System.out.println("EMAILLLLLLLL "+eml);
-                phone =rs.getString("Phone");
-             //   System.out.println("EMAILLLLLLLL "+phone);
-                String fname =rs.getString("fname");
-              //  System.out.println("FIRST NAME "+fname);
-                String lname =rs.getString("lname");
-               // System.out.println("LAST NAME "+lname);
-                name = fname+" "+lname;
-               // System.out.println("FULL NAME "+name);
-                mng_Id =rs.getString("mng_id");
-               // System.out.println("MNGGGGGGGGGGGGG "+mng_Id);
-                rs.close();
-                ps.close();
-             
-                try{
-            if(!"".equals(REGISTRATION_DATAOBEJECT.validate(p_email, p_pass))){
-                
-                String ret = REGISTRATION_DATAOBEJECT.validate(p_email, p_pass);
-                if(ret=="yess"){
-                //String timeee = time;
-               // System.out.println("11111111111111" +timeee);
-               // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
-                email.setForeground(Color.GREEN);
-                pass.setForeground(Color.GREEN);                
-                JOptionPane.showMessageDialog(null, "Login Successfully");
-                
-                com.raven.main.Main sa = new com.raven.main.Main();
-                sa.setVisible(true);
-                this.dispose();
-            //    System.out.println("2222222222222222" +timeee);
-                
-               // dm.mngname(name,mng_Id,eml,phone,date,timeee);  
-               
-            }else  if(ret=="cp"){
-                //String timeee = time;
-               // System.out.println("11111111111111" +timeee);
-               // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
-                email.setForeground(Color.GREEN);
-                pass.setForeground(Color.GREEN);  
-              //  JOptionPane.showMessageDialog(null,"This's Your first login", "So You need to change the password first.", JOptionPane.PLAIN_MESSAGE);
-              JOptionPane.showMessageDialog(null, "So You need to change the password first.","This's Your first login", JOptionPane.INFORMATION_MESSAGE);
-                
-                OTP_Validation_Cpass cp = new OTP_Validation_Cpass();
-               
-                cp.vali(name, mng_Id, eml, phone);
-                cp.setVisible(true);
-                this.dispose();
-            //    System.out.println("2222222222222222" +timeee);
-                
-               // dm.mngname(name,mng_Id,eml,phone,date,timeee);  
-               
-            }else{
-                email.setForeground(Color.RED);
-                pass.setForeground(Color.RED);
-                JOptionPane.showMessageDialog(null,"Enter Correct Details", "Login Error", JOptionPane.ERROR_MESSAGE);
-               
-//                email.setText("Manager ID");
-//                pass.setText("Password");
-//                pass.setEchoChar((char)0);
-//                email.setForeground(new Color(128,128,128));
-//                pass.setForeground(new Color(128,128,128));
-            }
-            }
-        }catch (Exception e){
-            System.out.println("Exception -"+e);
-        }  
-            }else{
-                JOptionPane.showMessageDialog(null, "Enter Correct User Name","Login Error",JOptionPane.ERROR_MESSAGE);
-              //  System.out.println("Enter Correct User Name");
-            }
-             }
-        }catch(Exception e){
-            System.out.println("error"+e);
-        }
-        
-
-
-
-
- 
-    }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
@@ -386,6 +237,154 @@ public class Login extends javax.swing.JFrame {
         ev.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
+
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
+
+    private void hideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideMouseClicked
+        // TODO add your handling code here:
+        hide.setVisible(false);
+        show.setVisible(true);
+        pass.setEchoChar((char)0);
+    }//GEN-LAST:event_hideMouseClicked
+
+    private void showMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showMouseClicked
+        // TODO add your handling code here:
+        show.setVisible(false);
+        hide.setVisible(true);
+        pass.setEchoChar('*');
+    }//GEN-LAST:event_showMouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        // TODO add your handling code here:
+        //        com.raven.main.Main sa = new com.raven.main.Main();
+        //        sa.setVisible(true);
+        //        this.dispose();
+
+        String p_email = email.getText();
+        String p_pass = pass.getText();
+        String name= null;
+        String mng_Id = null;
+        String eml= null;
+        String phone = null;
+        try {
+            if(p_email.equals("")||p_pass.equals("")){
+                JOptionPane.showMessageDialog(this, "Fill up all field first","Error",JOptionPane.ERROR_MESSAGE);
+            }else{
+                //  Data fetch from database
+                String sql = "Select * from admin Where mng_id = ?";
+                Connection con=DATABASE_CONNECTION.getConnection();
+                PreparedStatement ps=con.prepareStatement(sql);
+                ps.setString(1,p_email);
+                ResultSet rs=ps.executeQuery();
+                if(rs.next()){
+                    //
+                    eml =rs.getString("email");
+                    //   System.out.println("EMAILLLLLLLL "+eml);
+                    phone =rs.getString("Phone");
+                    //   System.out.println("EMAILLLLLLLL "+phone);
+                    String fname =rs.getString("fname");
+                    //  System.out.println("FIRST NAME "+fname);
+                    String lname =rs.getString("lname");
+                    // System.out.println("LAST NAME "+lname);
+                    name = fname+" "+lname;
+                    // System.out.println("FULL NAME "+name);
+                    mng_Id =rs.getString("mng_id");
+                    // System.out.println("MNGGGGGGGGGGGGG "+mng_Id);
+                    rs.close();
+                    ps.close();
+
+                    try{
+                        if(!"".equals(REGISTRATION_DATAOBEJECT.validate(p_email, p_pass))){
+
+                            String ret = REGISTRATION_DATAOBEJECT.validate(p_email, p_pass);
+                            if(ret=="yess"){
+                                //String timeee = time;
+                                // System.out.println("11111111111111" +timeee);
+                                // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
+                                email.setForeground(Color.GREEN);
+                                pass.setForeground(Color.GREEN);
+                                JOptionPane.showMessageDialog(null, "Login Successfully");
+
+                                com.raven.main.Main sa = new com.raven.main.Main();
+                                sa.setVisible(true);
+                                this.dispose();
+                                //    System.out.println("2222222222222222" +timeee);
+
+                                // dm.mngname(name,mng_Id,eml,phone,date,timeee);
+
+                            }else  if(ret=="cp"){
+                                //String timeee = time;
+                                // System.out.println("11111111111111" +timeee);
+                                // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
+                                email.setForeground(Color.GREEN);
+                                pass.setForeground(Color.GREEN);
+                                //  JOptionPane.showMessageDialog(null,"This's Your first login", "So You need to change the password first.", JOptionPane.PLAIN_MESSAGE);
+                                JOptionPane.showMessageDialog(null, "So You need to change the password first.","This's Your first login", JOptionPane.INFORMATION_MESSAGE);
+
+                                OTP_Validation_Cpass cp = new OTP_Validation_Cpass();
+
+                                cp.vali(name, mng_Id, eml, phone);
+                                cp.setVisible(true);
+                                this.dispose();
+                                //    System.out.println("2222222222222222" +timeee);
+
+                                // dm.mngname(name,mng_Id,eml,phone,date,timeee);
+
+                            }else{
+                                email.setForeground(Color.RED);
+                                pass.setForeground(Color.RED);
+                                JOptionPane.showMessageDialog(null,"Enter Correct Details", "Login Error", JOptionPane.ERROR_MESSAGE);
+
+                                //                email.setText("Manager ID");
+                                //                pass.setText("Password");
+                                //                pass.setEchoChar((char)0);
+                                //                email.setForeground(new Color(128,128,128));
+                                //                pass.setForeground(new Color(128,128,128));
+                            }
+                        }
+                    }catch (Exception e){
+                        System.out.println("Exception -"+e);
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Enter Correct User Name","Login Error",JOptionPane.ERROR_MESSAGE);
+                    //  System.out.println("Enter Correct User Name");
+                }
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
+        // TODO add your handling code here:
+        int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Close This Application ?");
+        if(Yes == 0){
+
+            this.dispose();
+        }else{
+            int No=0;
+            if (No == 0){
+            }
+        }
+    }//GEN-LAST:event_Close_bMouseClicked
+
+    private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered
+        // TODO add your handling code here:
+        Close_bb.setBackground(new Color(255, 0, 0));
+        Close_b.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Close_bMouseEntered
+
+    private void Close_bMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseExited
+        // TODO add your handling code here:
+        Close_bb.setBackground(new Color(255, 255, 255));
+        Close_b.setForeground(new Color(255,0,0));
+    }//GEN-LAST:event_Close_bMouseExited
 
     /**
      * @param args the command line arguments
@@ -436,13 +435,15 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPasswordField pass;
     private javax.swing.JLabel show;
     // End of variables declaration//GEN-END:variables
