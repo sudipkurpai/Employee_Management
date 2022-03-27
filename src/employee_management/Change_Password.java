@@ -149,7 +149,7 @@ public class Change_Password extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Enter Your Password");
-        jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 230, 30));
+        jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 230, 30));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -299,8 +299,8 @@ public class Change_Password extends javax.swing.JFrame {
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         // TODO add your handling code here:
-        String pp1= pass1.getText();
-        String pp2=pass2.getText();
+//        String pp1= pass1.getText();
+//        String pp2=pass2.getText();
         if(pp1.equals(pp2)){
             int sta=0;
             try {
@@ -333,42 +333,6 @@ public class Change_Password extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel16MouseClicked
 
-    private void pass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pass1ActionPerformed
-
-    private void hhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hhMouseClicked
-        // TODO add your handling code here:
-        hh.setVisible(false);
-        ss.setVisible(true);
-        pass1.setEchoChar((char)0);
-    }//GEN-LAST:event_hhMouseClicked
-
-    private void ssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ssMouseClicked
-        // TODO add your handling code here:
-        ss.setVisible(false);
-        hh.setVisible(true);
-        pass1.setEchoChar('*');
-    }//GEN-LAST:event_ssMouseClicked
-
-    private void pass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pass2ActionPerformed
-
-    private void hh1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hh1MouseClicked
-        // TODO add your handling code here:
-        hh1.setVisible(false);
-        ss1.setVisible(true);
-        pass2.setEchoChar((char)0);
-    }//GEN-LAST:event_hh1MouseClicked
-
-    private void ss1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ss1MouseClicked
-        // TODO add your handling code here:
-        ss1.setVisible(false);
-        hh1.setVisible(true);
-        pass2.setEchoChar('*');
-    }//GEN-LAST:event_ss1MouseClicked
-
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
         // TODO add your handling code here:
         int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Close This Application ?");
@@ -384,16 +348,52 @@ public class Change_Password extends javax.swing.JFrame {
 
     private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered
         // TODO add your handling code here:
-        Close_bb.setBackground(new Color(255, 0, 0));
-        Close_b.setForeground(new Color(255,255,255));
+//        Close_bb.setBackground(new Color(255, 0, 0));
+//        Close_b.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_Close_bMouseEntered
 
     private void Close_bMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseExited
         // TODO add your handling code here:
-<<<<<<< HEAD
+        /*<<<<<<< HEAD*/
         Close_bb.setBackground(new Color(255, 255, 255));
         Close_b.setForeground(new Color(255,0,0));
     }//GEN-LAST:event_Close_bMouseExited
+
+    private void ss1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ss1MouseClicked
+        // TODO add your handling code here:
+        ss1.setVisible(false);
+        hh1.setVisible(true);
+        pass2.setEchoChar('*');
+    }//GEN-LAST:event_ss1MouseClicked
+
+    private void hh1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hh1MouseClicked
+        // TODO add your handling code here:
+        hh1.setVisible(false);
+        ss1.setVisible(true);
+        pass2.setEchoChar((char)0);
+    }//GEN-LAST:event_hh1MouseClicked
+
+    private void pass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pass2ActionPerformed
+
+    private void ssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ssMouseClicked
+        // TODO add your handling code here:
+        ss.setVisible(false);
+        hh.setVisible(true);
+        pass1.setEchoChar('*');
+    }//GEN-LAST:event_ssMouseClicked
+
+    private void hhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hhMouseClicked
+        // TODO add your handling code here:
+        hh.setVisible(false);
+        ss.setVisible(true);
+        pass1.setEchoChar((char)0);
+    }//GEN-LAST:event_hhMouseClicked
+
+    private void pass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pass1ActionPerformed
 =======
         String pp1= pass1.getText();
         String pp2=pass2.getText();
@@ -451,7 +451,7 @@ public class Change_Password extends javax.swing.JFrame {
         
         
              
-    }//GEN-LAST:event_jLabel16MouseClicked
+    }                                     
 >>>>>>> d8ad8332110e225d75ae8bd182cf5f091bd6847b
 
     /**
