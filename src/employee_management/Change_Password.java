@@ -127,10 +127,30 @@ public class Change_Password extends javax.swing.JFrame {
 
         jPanel8.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 350, 50));
 
+<<<<<<< Updated upstream
         jLabel6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Enter Your Password");
         jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 230, 30));
+=======
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel2.setText("Your Password");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 380, 44));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel3.setText("Change");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 220, 60));
+
+        jLabel4.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel4.setText("Password:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 120, 30));
+>>>>>>> Stashed changes
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -217,19 +237,19 @@ public class Change_Password extends javax.swing.JFrame {
 
         jPanel8.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 350, 50));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(47, 68, 187));
         jLabel4.setText("Change");
         jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 320, 50));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(47, 68, 187));
         jLabel2.setText("Your Password");
         jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, 50));
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 520, 560));
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 530, 560));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 1060, 630));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 1070, 580));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -274,12 +294,13 @@ public class Change_Password extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 760));
 
-        setSize(new java.awt.Dimension(1200, 758));
+        setSize(new java.awt.Dimension(1200, 760));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         // TODO add your handling code here:
+<<<<<<< Updated upstream
         String pp1= pass1.getText();
         String pp2=pass2.getText();
         if(pp1.equals(pp2)){
@@ -308,6 +329,19 @@ public class Change_Password extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(Change_Password.class.getName()).log(Level.SEVERE, null, ex);
             }
+=======
+
+  Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Close_bMouseClicked
+
+    private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered
+        // TODO add your handling code here:
+        Close_bb.setBackground(new Color(225,0,0));
+        Close_b.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Close_bMouseEntered
+>>>>>>> Stashed changes
 
         }else{
             JOptionPane.showMessageDialog(null,"Both password must be same","Error",JOptionPane.ERROR_MESSAGE);
@@ -327,6 +361,7 @@ public class Change_Password extends javax.swing.JFrame {
 
     private void ssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ssMouseClicked
         // TODO add your handling code here:
+<<<<<<< Updated upstream
         ss.setVisible(false);
         hh.setVisible(true);
         pass1.setEchoChar('*');
@@ -374,6 +409,72 @@ public class Change_Password extends javax.swing.JFrame {
         Close_bb.setBackground(new Color(255, 255, 255));
         Close_b.setForeground(new Color(255,0,0));
     }//GEN-LAST:event_Close_bMouseExited
+=======
+          ss.setVisible(false);
+         hh.setVisible(true);
+         pass1.setEchoChar('*');
+    }//GEN-LAST:event_ssMouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        // TODO add your handling code here:
+        String pp1= pass1.getText();
+        String pp2=pass2.getText();
+         if(pp1.equals("")||pp2.equals("")){
+//             Change_Password a = new Change_Password();   // Any class A
+//Class c = a.getClass();
+             warning wr = new warning();
+             wr.setVisible(true);
+             wr.msg("<html>Please Fill The All Fild First </html>");
+           //  this.hide();
+        // JOptionPane.showMessageDialog(null,"Please Fill The All Fild First" );
+        }else{
+        if(PASSWORD_PATTERN.matcher(pp1).matches()){
+        if(pp1.equals(pp2)){
+            int sta=0;
+            try {
+               Connection con=DATABASE_CONNECTION.getConnection(); 
+           //  UPDATE `admin` SET `Password`='123' WHERE `mng_id`='123';
+           //String v ="1";
+                PreparedStatement ps=con.prepareStatement("UPDATE admin set Password =?, status ="+'1'+" where mng_id = ?");
+                   
+                   ps.setString(1, pp1);
+                   //ps.setString(2, v);
+                   ps.setString(2, Id);
+                   
+                   sta=ps.executeUpdate();
+                   con.close();
+                  // System.out.println("sta"+sta);
+                    if(sta==1){
+                      Succes wr = new Succes();
+             wr.setVisible(true);
+              Login l = new Login();
+              
+             wr.msg("<html>Your password changed successfully \n You Can Login Now.  </html>",l.toString());
+                    String newline = System.lineSeparator();
+                  //  JOptionPane.showMessageDialog(null, "Your password changed successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
+                   
+                   // l.setVisible(true);
+                   // this.dispose();
+                }
+             } catch (SQLException ex) {
+                Logger.getLogger(Change_Password.class.getName()).log(Level.SEVERE, null, ex);
+            }        
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null,"Both password must be same","Error",JOptionPane.ERROR_MESSAGE);
+                }   
+            
+            }else {
+               JOptionPane.showMessageDialog(null, "Password between 8 and 32 characters\nPassword must contain at least one lowercase letter\none uppercase letter\none numeric digit\none special character.");
+        }
+        }
+           
+        
+        
+        
+             
+    }//GEN-LAST:event_jLabel16MouseClicked
+>>>>>>> Stashed changes
 
     /**
      * @param args the command line arguments
