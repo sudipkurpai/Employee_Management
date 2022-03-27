@@ -5,13 +5,14 @@
  */
 package employee_management;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
+
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,6 +32,13 @@ public class Reset_Password extends javax.swing.JFrame {
     public Reset_Password() {
         initComponents();
     }
+     private static final String A ="^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|" +
+			"(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|" +
+			"(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|" +
+			"(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})" +
+			"[A-Za-z0-9!~<>,;:_=?*+#.\"&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]" +
+			"{8,32}$";
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile(A);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -319,6 +327,7 @@ public class Reset_Password extends javax.swing.JFrame {
         if(p1.equals("")||p2.equals("")){
          JOptionPane.showMessageDialog(null, "Please Fill The All Fild First");
         }else{
+            if(PASSWORD_PATTERN.matcher(p1).matches()){
             if(p1.equals(p2)){
               int sta=0;
             try {
@@ -354,6 +363,9 @@ public class Reset_Password extends javax.swing.JFrame {
                       JOptionPane.showMessageDialog(null, "Both Password must be same");
    
             }
+            }else {
+               JOptionPane.showMessageDialog(null, "Password between 8 and 32 characters\nPassword must contain at least one lowercase letter\none uppercase letter\none numeric digit\none special character.");
+        }
         }
         
         

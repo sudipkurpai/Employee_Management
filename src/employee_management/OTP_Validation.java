@@ -52,7 +52,7 @@ public class OTP_Validation extends javax.swing.JFrame {
              String newline = System.lineSeparator();
           msc = "YOUR OTP FOR FORGOT PASSWORD IS "+otp+" ." +newline + newline + newline +"THANK YOU." ;
           
-            MAIL.send(eml,"Welcome"+" "+Name, msc);
+           // MAIL.send(eml,"Welcome"+" "+Name, msc);
             return a;
             //JOptionPane.showMessageDialog(null, "OTP Send To "+" "+Name+" " +"By Email");
      }

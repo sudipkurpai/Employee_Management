@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/F:/Employee_Management/src/employee_management/Add_Employee.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/MAIL.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/success.java</file>
@@ -13,6 +14,16 @@
             <file>file:/F:/Employee_Management/src/employee_management/Assign.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/Change_Password.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/Add_customer1.java</file>
+=======
+            <file>file:/E:/Employee_Management/src/com/raven/swing/table/Action.java</file>
+            <file>file:/E:/Employee_Management/src/com/raven/swing/table/TableCellAction.java</file>
+            <file>file:/E:/Employee_Management/src/com/raven/swing/table/Table.java</file>
+            <file>file:/E:/Employee_Management/src/com/raven/form/Form_Home.java</file>
+            <file>file:/E:/Employee_Management/src/com/raven/swing/table/EventAction.java</file>
+            <file>file:/E:/Employee_Management/src/com/raven/model/ModelStudent.java</file>
+            <file>file:/E:/Employee_Management/src/com/raven/main/Main.java</file>
+            <file>file:/E:/Employee_Management/src/com/raven/swing/table/ModelAction.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
