@@ -3,21 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< Updated upstream
+            <file>file:/F:/Employee_Management/src/employee_management/Add_Employee.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/MAIL.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/success.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/OTP_Validation_Cpass.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/OTP_Validation.java</file>
-            <file>file:/F:/Employee_Management/src/employee_management/DATABASE_CONNECTION.java</file>
             <file>file:/F:/Employee_Management/src/employee_management/Login.java</file>
-=======
-            <file>file:/E:/Employee_Management/src/employee_management/Email_Verification.java</file>
-            <file>file:/E:/Employee_Management/src/employee_management/MAIL.java</file>
-            <file>file:/E:/Employee_Management/src/employee_management/OTP_Validation.java</file>
-            <file>file:/E:/Employee_Management/src/employee_management/Reset_Password.java</file>
-            <file>file:/E:/Employee_Management/src/employee_management/Change_Password.java</file>
-            <file>file:/E:/Employee_Management/src/employee_management/OTP_Validation_Cpass.java</file>
->>>>>>> Stashed changes
+            <file>file:/F:/Employee_Management/src/employee_management/Add_Coustomer.java</file>
+            <file>file:/F:/Employee_Management/src/employee_management/Assign.java</file>
+            <file>file:/F:/Employee_Management/src/employee_management/Change_Password.java</file>
+            <file>file:/F:/Employee_Management/src/employee_management/Add_customer1.java</file>
         </group>
     </open-files>
 </project-private>

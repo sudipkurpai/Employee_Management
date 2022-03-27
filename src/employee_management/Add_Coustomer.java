@@ -40,8 +40,8 @@ public class Add_Coustomer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         fName = new javax.swing.JLabel();
         Phone = new javax.swing.JLabel();
@@ -61,43 +61,45 @@ public class Add_Coustomer extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         address1 = new javax.swing.JTextArea();
         jLabel30 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        mng_name = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         mng_id = new javax.swing.JTextField();
-        mng_name = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(14, 73, 181));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.setBackground(new java.awt.Color(82, 0, 106));
+        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 0, 255)));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         jLabel1.setText("Create New Customer !");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 30, 400, -1));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 30, 400, -1));
 
         fName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         fName.setForeground(new java.awt.Color(128, 128, 128));
         fName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         fName.setText("First Name");
-        jPanel2.add(fName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 140, 20));
+        jPanel4.add(fName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 140, 20));
 
         Phone.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         Phone.setForeground(new java.awt.Color(128, 128, 128));
         Phone.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Phone.setText("Phone");
-        jPanel2.add(Phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 260, 20));
+        jPanel4.add(Phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 260, 20));
 
         Email.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         Email.setForeground(new java.awt.Color(128, 128, 128));
         Email.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Email.setText("Email");
-        jPanel2.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 280, 20));
+        jPanel4.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 280, 20));
 
         crt_emp.setBackground(new java.awt.Color(0, 102, 255));
         crt_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
@@ -123,25 +125,25 @@ public class Add_Coustomer extends javax.swing.JFrame {
             .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jPanel2.add(crt_emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 560, 50));
+        jPanel4.add(crt_emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 560, 50));
 
         L_name.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         L_name.setForeground(new java.awt.Color(128, 128, 128));
         L_name.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         L_name.setText("Last Name");
-        jPanel2.add(L_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 220, 20));
+        jPanel4.add(L_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 220, 20));
 
         jLabel26.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(128, 128, 128));
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel26.setText("Customer ID");
-        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, 20));
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, 20));
 
         jLabel29.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(128, 128, 128));
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel29.setText("Address");
-        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 70, 20));
+        jPanel4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 70, 20));
 
         firstname.setBackground(new java.awt.Color(255, 255, 255));
         firstname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -156,7 +158,7 @@ public class Add_Coustomer extends javax.swing.JFrame {
                 firstnameFocusLost(evt);
             }
         });
-        jPanel2.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 260, 30));
+        jPanel4.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 260, 30));
 
         lastname.setBackground(new java.awt.Color(255, 255, 255));
         lastname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -177,7 +179,7 @@ public class Add_Coustomer extends javax.swing.JFrame {
                 lastnameActionPerformed(evt);
             }
         });
-        jPanel2.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 280, 30));
+        jPanel4.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 280, 30));
 
         email.setBackground(new java.awt.Color(255, 255, 255));
         email.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -192,7 +194,7 @@ public class Add_Coustomer extends javax.swing.JFrame {
                 emailFocusLost(evt);
             }
         });
-        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 280, 30));
+        jPanel4.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 280, 30));
 
         phone3.setBackground(new java.awt.Color(255, 255, 255));
         phone3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -207,7 +209,7 @@ public class Add_Coustomer extends javax.swing.JFrame {
                 phone3FocusLost(evt);
             }
         });
-        jPanel2.add(phone3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, 30));
+        jPanel4.add(phone3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, 30));
 
         Emp_id.setBackground(new java.awt.Color(255, 255, 255));
         Emp_id.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -220,7 +222,7 @@ public class Add_Coustomer extends javax.swing.JFrame {
                 Emp_idActionPerformed(evt);
             }
         });
-        jPanel2.add(Emp_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 260, 30));
+        jPanel4.add(Emp_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 260, 30));
 
         address.setBackground(new java.awt.Color(255, 255, 255));
         address.setColumns(10);
@@ -240,7 +242,7 @@ public class Add_Coustomer extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(address);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 560, -1));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 560, -1));
 
         address1.setBackground(new java.awt.Color(255, 255, 255));
         address1.setColumns(10);
@@ -260,15 +262,36 @@ public class Add_Coustomer extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(address1);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 560, -1));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 560, -1));
 
         jLabel30.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(128, 128, 128));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel30.setText("Service Description");
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 190, 20));
+        jPanel4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 190, 20));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 600, 680));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/add-group (3).png"))); // NOI18N
+
+        mng_name.setBackground(new java.awt.Color(82, 0, 106));
+        mng_name.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mng_name.setForeground(new java.awt.Color(255, 255, 255));
+        mng_name.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mng_name.setToolTipText("");
+        mng_name.setBorder(null);
+
+        jLabel25.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel25.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("<Html>ADD CUSTOMER</Html>");
+
+        mng_id.setBackground(new java.awt.Color(82, 0, 106));
+        mng_id.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mng_id.setForeground(new java.awt.Color(255, 255, 255));
+        mng_id.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mng_id.setToolTipText("");
+        mng_id.setBorder(null);
 
         jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setFont(new java.awt.Font("Georgia", 0, 48)); // NOI18N
@@ -276,47 +299,110 @@ public class Add_Coustomer extends javax.swing.JFrame {
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel23.setText("Welcome !");
         jLabel23.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 300, 70));
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/add-group (3).png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 210, 320, 310));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(14, 14, 14)
+                            .addComponent(mng_name, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(14, 14, 14)
+                            .addComponent(mng_id, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(622, 622, 622)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(mng_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(mng_id, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(50, 50, 50)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 112, Short.MAX_VALUE)))
+        );
 
-        jLabel25.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel25.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("<Html>ADD CUSTOMER</Html>");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 300, 70));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        mng_id.setBackground(new java.awt.Color(14, 73, 181));
-        mng_id.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        mng_id.setForeground(new java.awt.Color(255, 255, 255));
-        mng_id.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        mng_id.setToolTipText("");
-        mng_id.setBorder(null);
-        jPanel1.add(mng_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 290, 30));
+        jPanel2.setBackground(new java.awt.Color(47, 68, 187));
 
-        mng_name.setBackground(new java.awt.Color(14, 73, 181));
-        mng_name.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        mng_name.setForeground(new java.awt.Color(255, 255, 255));
-        mng_name.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        mng_name.setToolTipText("");
-        mng_name.setBorder(null);
-        jPanel1.add(mng_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 290, 40));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 394, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 376, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 942, Short.MAX_VALUE)
+            .addGap(0, 1100, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
+            .addGap(0, 770, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        setSize(new java.awt.Dimension(942, 701));
+        setSize(new java.awt.Dimension(1100, 750));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -326,19 +412,17 @@ public class Add_Coustomer extends javax.swing.JFrame {
         String lName = lastname.getText();
         String ph = phone3.getText();
         String mail = email.getText();
-       
+
         String add = address.getText();
-       
 
         //Date from Calender and set Format for date
-       
+
         //  System.out.println("!@##%$$%$"+dob);
         //////////////
 
         if(fName.isEmpty()){
             JOptionPane.showMessageDialog(this, "Fill up all field first");
         }
-      
     }//GEN-LAST:event_jLabel28MouseClicked
 
     private void firstnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameFocusGained
@@ -348,7 +432,6 @@ public class Add_Coustomer extends javax.swing.JFrame {
             firstname.setText("");
             firstname.setForeground(new Color(000,000,000));
         }
-
     }//GEN-LAST:event_firstnameFocusGained
 
     private void firstnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameFocusLost
@@ -512,6 +595,8 @@ public class Add_Coustomer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField lastname;
