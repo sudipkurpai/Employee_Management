@@ -7,6 +7,7 @@ package employee_management;
 
 import java.awt.Color;
 import java.util.Random;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,8 +21,6 @@ public class OTP_Validation extends javax.swing.JFrame {
      String eml;
     
      String Name;
-    
-     
      String otp;
      String msc;
     
@@ -40,9 +39,13 @@ public class OTP_Validation extends javax.swing.JFrame {
     public OTP_Validation() {
         this.eml = "";
         initComponents();
+         pass.setEchoChar((char)0);
+        e2.setVisible(false);
         err.setVisible(false);
        
     }
+     private static final String A ="{1,6}$";
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile(A);
      public String gen_otp(){
          String a = "yes";
         Random rand = new Random();
@@ -85,6 +88,7 @@ public class OTP_Validation extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         err = new javax.swing.JLabel();
+        e2 = new javax.swing.JLabel();
         errssdsd = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Close_b = new javax.swing.JLabel();
@@ -120,17 +124,26 @@ public class OTP_Validation extends javax.swing.JFrame {
         jLabel5.setText("sent you on your email address.");
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(47, 68, 187), 2));
+        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(47, 68, 187)));
 
         pass.setBackground(new java.awt.Color(255, 255, 255));
         pass.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        pass.setForeground(new java.awt.Color(0, 125, 254));
+        pass.setForeground(new java.awt.Color(128, 128, 128));
+        pass.setText("Enter Your OTP");
         pass.setBorder(null);
+        pass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passFocusLost(evt);
+            }
+        });
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        h.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/h.png"))); // NOI18N
+        h.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/visibility (1).png"))); // NOI18N
         h.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         h.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -139,7 +152,7 @@ public class OTP_Validation extends javax.swing.JFrame {
         });
         jPanel6.add(h, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
 
-        s.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/s.png"))); // NOI18N
+        s.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/visibility.png"))); // NOI18N
         s.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         s.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -148,7 +161,7 @@ public class OTP_Validation extends javax.swing.JFrame {
         });
         jPanel6.add(s, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/padlock (3).png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-lock-31 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -156,7 +169,7 @@ public class OTP_Validation extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(pass, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -165,7 +178,7 @@ public class OTP_Validation extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pass)
+            .addComponent(pass, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jLabel8.setFont(new java.awt.Font("Consolas", 0, 16)); // NOI18N
@@ -174,7 +187,7 @@ public class OTP_Validation extends javax.swing.JFrame {
         jLabel8.setText("If you don't recive a code!");
 
         jLabel9.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 125, 254));
+        jLabel9.setForeground(new java.awt.Color(47, 68, 187));
         jLabel9.setText("Resend");
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -212,25 +225,34 @@ public class OTP_Validation extends javax.swing.JFrame {
         err.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         err.setText("Error..,");
 
+        e2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        e2.setForeground(new java.awt.Color(128, 128, 128));
+        e2.setText("Enter Your OTP");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(err, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel5)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(err, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(e2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,11 +261,13 @@ public class OTP_Validation extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
+                .addComponent(e2)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(err)
@@ -253,7 +277,7 @@ public class OTP_Validation extends javax.swing.JFrame {
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         errssdsd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/otp_verrpng.png"))); // NOI18N
@@ -264,22 +288,19 @@ public class OTP_Validation extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(errssdsd, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 0, 0)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(errssdsd, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(errssdsd, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 1020, 610));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 1020, 640));
 
         jPanel2.setBackground(new java.awt.Color(47, 68, 187));
 
@@ -374,6 +395,7 @@ public class OTP_Validation extends javax.swing.JFrame {
         // TODO add your handling code here:
         
          Login l = new Login();
+        
         l.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Close_bMouseClicked
@@ -387,7 +409,10 @@ public class OTP_Validation extends javax.swing.JFrame {
             err.setVisible(true);
             err.setText("Please Input Your OTP!");
         }else{
-        err.setVisible(false);
+            err.setVisible(false);
+        
+         
+        
        
 
 
@@ -402,15 +427,40 @@ public class OTP_Validation extends javax.swing.JFrame {
             err.setVisible(true);
             err.setText("Invalid OTP please try again!");
         }
+        
+          
+        
+        
         }
-        
-        
-        
         
         
         
       
     }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void passFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passFocusGained
+        // TODO add your handling code here:
+        
+         if(pass.getText().equals("Enter Your OTP")){
+            e2.setVisible(true);
+           e2.setForeground( Color.decode("#2F44BB"));
+            pass.setText("");
+            pass.setEchoChar('*');
+            pass.setForeground(Color.decode("#2F44BB"));
+        }
+    }//GEN-LAST:event_passFocusGained
+
+    private void passFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passFocusLost
+        // TODO add your handling code here:
+         if(pass.getText().equals("")){
+            e2.setVisible(false);
+            pass.setText("Enter Your OTP");
+            pass.setEchoChar((char)0);
+            pass.setForeground(Color.decode("#808080"));
+        }else{
+            pass.setVisible(true);
+        }
+    }//GEN-LAST:event_passFocusLost
 
     /**
      * @param args the command line arguments
@@ -450,6 +500,7 @@ public class OTP_Validation extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close_b;
+    private javax.swing.JLabel e2;
     private javax.swing.JLabel err;
     private javax.swing.JLabel errssdsd;
     private javax.swing.JLabel h;

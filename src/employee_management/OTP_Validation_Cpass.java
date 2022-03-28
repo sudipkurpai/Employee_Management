@@ -8,6 +8,7 @@ package employee_management;
 
 import java.awt.Color;
 import java.util.Random;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -54,11 +55,16 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
     public OTP_Validation_Cpass() {
         initComponents();
         err.setVisible(false);
-        
+          s.setVisible(false);
+          
+      //  e2.setVisible(false);
        
         
         
     }
+     private static final String A =
+			"{6,6}$";
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile(A);
    
      public String gen_otp(){
          String a = "yes";
@@ -93,6 +99,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        e2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         pass = new javax.swing.JPasswordField();
         jPanel6 = new javax.swing.JPanel();
@@ -138,18 +145,31 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("sent you on your email address.");
 
+        e2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        e2.setForeground(new java.awt.Color(128, 128, 128));
+        e2.setText("Enter Your OTP");
+
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(47, 68, 187), 2));
+        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(47, 68, 187)));
 
         pass.setBackground(new java.awt.Color(255, 255, 255));
         pass.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         pass.setForeground(new java.awt.Color(0, 125, 254));
+        pass.setText("Enter Your OTP");
         pass.setBorder(null);
+        pass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passFocusLost(evt);
+            }
+        });
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        h.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/h.png"))); // NOI18N
+        h.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/visibility (1).png"))); // NOI18N
         h.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         h.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -158,7 +178,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         });
         jPanel6.add(h, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
 
-        s.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/s.png"))); // NOI18N
+        s.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/visibility.png"))); // NOI18N
         s.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         s.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -167,7 +187,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         });
         jPanel6.add(s, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/padlock (3).png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-lock-31 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -184,7 +204,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pass)
+            .addComponent(pass, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jLabel8.setFont(new java.awt.Font("Consolas", 0, 16)); // NOI18N
@@ -253,25 +273,30 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(err, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(err, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4))
+                .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(120, 120, 120)
+                    .addComponent(e2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(145, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(91, 91, 91)
+                .addGap(56, 56, 56)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addGap(18, 18, 18)
+                .addGap(76, 76, 76)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(err)
@@ -282,6 +307,11 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(183, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(266, 266, 266)
+                    .addComponent(e2)
+                    .addContainerGap(338, Short.MAX_VALUE)))
         );
 
         errssdsd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/otp_verrpng.png"))); // NOI18N
@@ -429,12 +459,39 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
             err.setVisible(true);
             err.setText("Invalid OTP please try again!");
         }
+        
+
         }
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jPanel7AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel7AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel7AncestorAdded
+
+    private void passFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passFocusGained
+        // TODO add your handling code here:
+        
+        if(pass.getText().equals("Enter Your OTP")){
+            e2.setVisible(true);
+           e2.setForeground( Color.decode("#2F44BB"));
+            pass.setText("");
+            pass.setEchoChar('*');
+            pass.setForeground(Color.decode("#2F44BB"));
+        }
+    }//GEN-LAST:event_passFocusGained
+
+    private void passFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passFocusLost
+        // TODO add your handling code here:
+        
+          if(pass.getText().equals("")){
+            e2.setVisible(false);
+            pass.setText("Enter Your OTP");
+            pass.setEchoChar((char)0);
+            pass.setForeground(Color.decode("#808080"));
+        }else{
+            pass.setVisible(true);
+        }
+    }//GEN-LAST:event_passFocusLost
 
     /**
      * @param args the command line arguments
@@ -476,6 +533,7 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close_b;
+    private javax.swing.JLabel e2;
     private javax.swing.JLabel err;
     private javax.swing.JLabel errssdsd;
     private javax.swing.JLabel h;

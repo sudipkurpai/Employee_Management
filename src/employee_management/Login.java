@@ -19,12 +19,32 @@ import javax.swing.JOptionPane;
  * @author ganesh_pradhan
  */
 public class Login extends javax.swing.JFrame {
+    
+    
+    public void wel(String val){
+        String v= "0";
+        v=val;
+        if(v.equals("2")){
+            web.setVisible(true);
+        we.setVisible(false);
+        }else{
+            we.setVisible(true);
+        web.setVisible(false);
+        }
+        
+    }
 
     /**
      * Creates new form login3
      */
     public Login() {
         initComponents();
+        pass.setEchoChar((char)0);
+        pt.setVisible(false);
+        we.setVisible(true);
+        web.setVisible(false);
+        
+        
         
     }
 
@@ -40,7 +60,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        web = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -53,8 +73,9 @@ public class Login extends javax.swing.JFrame {
         show = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        pt = new javax.swing.JLabel();
+        e1 = new javax.swing.JLabel();
+        we = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Close_bb = new javax.swing.JPanel();
         Close_b = new javax.swing.JLabel();
@@ -73,10 +94,10 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Tablet login-rafiki (1).png"))); // NOI18N
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 600, 550));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(47, 68, 187));
-        jLabel2.setText("Welcome Back!");
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 50));
+        web.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
+        web.setForeground(new java.awt.Color(47, 68, 187));
+        web.setText("Welcome Back!");
+        jPanel5.add(web, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(47, 68, 187));
@@ -84,7 +105,7 @@ public class Login extends javax.swing.JFrame {
         jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 300, 30));
 
         jLabel12.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setForeground(new java.awt.Color(204, 0, 0));
         jLabel12.setText("Forgot Password?");
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,7 +113,7 @@ public class Login extends javax.swing.JFrame {
                 jLabel12MouseClicked(evt);
             }
         });
-        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 120, 40));
+        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 110, 40));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -103,17 +124,20 @@ public class Login extends javax.swing.JFrame {
 
         email.setBackground(new java.awt.Color(255, 255, 255));
         email.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        email.setForeground(new java.awt.Color(204, 204, 204));
+        email.setForeground(new java.awt.Color(128, 128, 128));
         email.setText("Enter Username");
         email.setBorder(null);
-        email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+        email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailFocusLost(evt);
             }
         });
         jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 10, 290, 30));
 
-        jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 350, 50));
+        jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 350, 50));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -121,12 +145,15 @@ public class Login extends javax.swing.JFrame {
 
         pass.setBackground(new java.awt.Color(255, 255, 255));
         pass.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        pass.setForeground(new java.awt.Color(204, 204, 204));
+        pass.setForeground(new java.awt.Color(128, 128, 128));
         pass.setText("Enter Your Password");
         pass.setBorder(null);
-        pass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passActionPerformed(evt);
+        pass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passFocusLost(evt);
             }
         });
         jPanel4.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
@@ -153,7 +180,7 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel4.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
 
-        jPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 350, 50));
+        jPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 350, 50));
 
         jPanel6.setBackground(new java.awt.Color(47, 68, 187));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -170,17 +197,22 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 50));
 
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 350, -1));
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 350, -1));
 
-        jLabel6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Enter Your Password");
-        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 230, 30));
+        pt.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        pt.setForeground(new java.awt.Color(128, 128, 128));
+        pt.setText("Enter Your Password");
+        jPanel5.add(pt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 230, 30));
 
-        jLabel7.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText("Enter Username");
-        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 190, 30));
+        e1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        e1.setForeground(new java.awt.Color(128, 128, 128));
+        e1.setText("Enter Username");
+        jPanel5.add(e1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 190, 30));
+
+        we.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
+        we.setForeground(new java.awt.Color(47, 68, 187));
+        we.setText("Welcome!");
+        jPanel5.add(we, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 50));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 58, 1057, 582));
 
@@ -227,7 +259,7 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 710));
 
-        setSize(new java.awt.Dimension(1196, 711));
+        setSize(new java.awt.Dimension(1200, 711));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -237,14 +269,6 @@ public class Login extends javax.swing.JFrame {
         ev.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel12MouseClicked
-
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-
-    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passActionPerformed
 
     private void hideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideMouseClicked
         // TODO add your handling code here:
@@ -274,7 +298,9 @@ public class Login extends javax.swing.JFrame {
         String phone = null;
         try {
             if(p_email.equals("")||p_pass.equals("")){
-                JOptionPane.showMessageDialog(this, "Fill up all field first","Error",JOptionPane.ERROR_MESSAGE);
+                
+                
+               // JOptionPane.showMessageDialog(this, "Fill up all field first","Error",JOptionPane.ERROR_MESSAGE);
             }else{
                 //  Data fetch from database
                 String sql = "Select * from admin Where mng_id = ?";
@@ -386,6 +412,50 @@ public class Login extends javax.swing.JFrame {
         Close_b.setForeground(new Color(255,0,0));
     }//GEN-LAST:event_Close_bMouseExited
 
+    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
+        // TODO add your handling code here:
+        if(email.getText().equals("Enter Username")){
+           e1.setVisible(true);
+            e1.setForeground( Color.decode("#2F44BB"));
+            email.setText("");
+            email.setForeground( Color.decode("#2F44BB"));
+        }
+    }//GEN-LAST:event_emailFocusGained
+
+    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
+        // TODO add your handling code here:
+          if(email.getText().equals("")){
+            e1.setVisible(false);
+            email.setText("Enter Username");
+           email.setForeground(Color.decode("#808080"));
+        }else{
+            e1.setVisible(true);
+        }
+    }//GEN-LAST:event_emailFocusLost
+
+    private void passFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passFocusGained
+        // TODO add your handling code here:
+         if(pass.getText().equals("Enter Your Password")){
+            pt.setVisible(true);
+            pt.setForeground( Color.decode("#2F44BB"));
+            pass.setText("");
+            pass.setEchoChar('*');
+            pass.setForeground(Color.decode("#2F44BB"));
+        }
+    }//GEN-LAST:event_passFocusGained
+
+    private void passFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passFocusLost
+        // TODO add your handling code here:
+          if(pass.getText().equals("")){
+            pt.setVisible(false);
+            pass.setText("Enter Your Password");
+            pass.setEchoChar((char)0);
+            pass.setForeground(Color.decode("#808080"));
+        }else{
+            pass.setVisible(true);
+        }
+    }//GEN-LAST:event_passFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -427,16 +497,14 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close_b;
     private javax.swing.JPanel Close_bb;
+    private javax.swing.JLabel e1;
     private javax.swing.JTextField email;
     private javax.swing.JLabel hide;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -445,6 +513,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPasswordField pass;
+    private javax.swing.JLabel pt;
     private javax.swing.JLabel show;
+    private javax.swing.JLabel we;
+    private javax.swing.JLabel web;
     // End of variables declaration//GEN-END:variables
 }

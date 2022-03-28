@@ -8,10 +8,12 @@ package employee_management;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
+import javax.naming.Context;
 import javax.swing.JOptionPane;
 
 
@@ -47,7 +49,19 @@ public class Change_Password extends javax.swing.JFrame {
     }
     public Change_Password() {
         initComponents();
+        pt2.setVisible(false);
+                pt1.setVisible(false);
+                 pass2.setEchoChar((char)0);
+         pass1.setEchoChar((char)0);
+
     }
+     private static final String A ="^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|" +
+			"(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|" +
+			"(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|" +
+			"(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})" +
+			"[A-Za-z0-9!~<>,;:_=?*+#.\"&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]" +
+			"{8,30}$";
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile(A);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,13 +78,13 @@ public class Change_Password extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        pt1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         pass1 = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
         hh = new javax.swing.JLabel();
         ss = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        pt2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         pass2 = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
@@ -94,7 +108,7 @@ public class Change_Password extends javax.swing.JFrame {
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Reset password-pana1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Reset password-rafiki.png"))); // NOI18N
         jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 590, 560));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -125,12 +139,12 @@ public class Change_Password extends javax.swing.JFrame {
             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel8.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 350, 50));
+        jPanel8.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 350, 50));
 
-        jLabel6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Enter Your Password");
-        jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 230, 30));
+        pt1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        pt1.setForeground(new java.awt.Color(128, 128, 128));
+        pt1.setText("Enter Your Password");
+        jPanel8.add(pt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 230, 30));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -138,12 +152,15 @@ public class Change_Password extends javax.swing.JFrame {
 
         pass1.setBackground(new java.awt.Color(255, 255, 255));
         pass1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        pass1.setForeground(new java.awt.Color(204, 204, 204));
+        pass1.setForeground(new java.awt.Color(128, 128, 128));
         pass1.setText("Enter Your Password");
         pass1.setBorder(null);
-        pass1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pass1ActionPerformed(evt);
+        pass1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pass1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pass1FocusLost(evt);
             }
         });
         jPanel5.add(pass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
@@ -170,12 +187,12 @@ public class Change_Password extends javax.swing.JFrame {
         });
         jPanel5.add(ss, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
 
-        jPanel8.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 350, 50));
+        jPanel8.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 350, 50));
 
-        jLabel7.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText(" Confirm  Your Password");
-        jPanel8.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 280, 30));
+        pt2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        pt2.setForeground(new java.awt.Color(128, 128, 128));
+        pt2.setText("Confirm  Your Password");
+        jPanel8.add(pt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 280, 30));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -183,12 +200,15 @@ public class Change_Password extends javax.swing.JFrame {
 
         pass2.setBackground(new java.awt.Color(255, 255, 255));
         pass2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        pass2.setForeground(new java.awt.Color(204, 204, 204));
-        pass2.setText(" Confirm  Your Password");
+        pass2.setForeground(new java.awt.Color(128, 128, 128));
+        pass2.setText("Confirm  Your Password");
         pass2.setBorder(null);
-        pass2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pass2ActionPerformed(evt);
+        pass2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pass2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pass2FocusLost(evt);
             }
         });
         jPanel4.add(pass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
@@ -215,21 +235,21 @@ public class Change_Password extends javax.swing.JFrame {
         });
         jPanel4.add(ss1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 40, 30));
 
-        jPanel8.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 350, 50));
+        jPanel8.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 350, 50));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(47, 68, 187));
         jLabel4.setText("Change");
         jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 320, 50));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(47, 68, 187));
         jLabel2.setText("Your Password");
         jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, 50));
 
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 520, 560));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 1060, 630));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 1060, 580));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -274,7 +294,7 @@ public class Change_Password extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 760));
 
-        setSize(new java.awt.Dimension(1200, 758));
+        setSize(new java.awt.Dimension(1200, 760));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -282,6 +302,16 @@ public class Change_Password extends javax.swing.JFrame {
         // TODO add your handling code here:
         String pp1= pass1.getText();
         String pp2=pass2.getText();
+      if(pp1.equals("")||pp2.equals("")){
+           String status = "CP";
+           Change_Password cp = new Change_Password();
+           
+                 new Succes(status).setVisible(true);
+                 this.dispose();
+                 
+       //  JOptionPane.showMessageDialog(null, "Please Fill The All Fild First");
+        }else{
+        if(PASSWORD_PATTERN.matcher(pp1).matches()){
         if(pp1.equals(pp2)){
             int sta=0;
             try {
@@ -300,6 +330,9 @@ public class Change_Password extends javax.swing.JFrame {
                 if(sta==1){
 
                     String newline = System.lineSeparator();
+                // new Succes(newline).setVisible(true);
+                   
+                    
                     JOptionPane.showMessageDialog(null, "Your password changed successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
                     Login l = new Login();
                     l.setVisible(true);
@@ -312,11 +345,12 @@ public class Change_Password extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null,"Both password must be same","Error",JOptionPane.ERROR_MESSAGE);
         }
+        }else {
+               JOptionPane.showMessageDialog(null, "Password between 8 and 30 characters\nPassword must contain at least one lowercase letter\none uppercase letter\none numeric digit\none special character.");
+        }
+        
+         }
     }//GEN-LAST:event_jLabel16MouseClicked
-
-    private void pass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pass1ActionPerformed
 
     private void hhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hhMouseClicked
         // TODO add your handling code here:
@@ -331,10 +365,6 @@ public class Change_Password extends javax.swing.JFrame {
         hh.setVisible(true);
         pass1.setEchoChar('*');
     }//GEN-LAST:event_ssMouseClicked
-
-    private void pass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pass2ActionPerformed
 
     private void hh1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hh1MouseClicked
         // TODO add your handling code here:
@@ -374,6 +404,52 @@ public class Change_Password extends javax.swing.JFrame {
         Close_bb.setBackground(new Color(255, 255, 255));
         Close_b.setForeground(new Color(255,0,0));
     }//GEN-LAST:event_Close_bMouseExited
+
+    private void pass1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass1FocusGained
+        // TODO add your handling code here:
+         if(pass1.getText().equals("Enter Your Password")){
+            pt1.setVisible(true);
+            pt1.setForeground( Color.decode("#2F44BB"));
+            pass1.setText("");
+            pass1.setEchoChar('*');
+            pass1.setForeground(Color.decode("#2F44BB"));
+        }
+    }//GEN-LAST:event_pass1FocusGained
+
+    private void pass1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass1FocusLost
+        // TODO add your handling code here:
+          if(pass1.getText().equals("")){
+            pt1.setVisible(false);
+            pass1.setText("Enter Your Password");
+            pass1.setEchoChar((char)0);
+            pass1.setForeground(Color.decode("#808080"));
+        }else{
+            pass1.setVisible(true);
+        }
+    }//GEN-LAST:event_pass1FocusLost
+
+    private void pass2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass2FocusGained
+        // TODO add your handling code here:
+        if(pass2.getText().equals("Confirm  Your Password")){
+            pt2.setVisible(true);
+            pt2.setForeground( Color.decode("#2F44BB"));
+            pass2.setText("");
+            pass2.setEchoChar('*');
+            pass2.setForeground(Color.decode("#2F44BB"));
+        }
+    }//GEN-LAST:event_pass2FocusGained
+
+    private void pass2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass2FocusLost
+        // TODO add your handling code here:
+         if(pass2.getText().equals("")){
+            pt2.setVisible(false);
+            pass2.setText("Confirm  Your Password");
+            pass2.setEchoChar((char)0);
+            pass2.setForeground(Color.decode("#808080"));
+        }else{
+            pass2.setVisible(true);
+        }
+    }//GEN-LAST:event_pass2FocusLost
 
     /**
      * @param args the command line arguments
@@ -436,8 +512,6 @@ public class Change_Password extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -447,6 +521,8 @@ public class Change_Password extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPasswordField pass1;
     private javax.swing.JPasswordField pass2;
+    private javax.swing.JLabel pt1;
+    private javax.swing.JLabel pt2;
     private javax.swing.JLabel ss;
     private javax.swing.JLabel ss1;
     // End of variables declaration//GEN-END:variables

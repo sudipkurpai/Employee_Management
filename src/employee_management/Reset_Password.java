@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,8 +30,20 @@ public class Reset_Password extends javax.swing.JFrame {
      * Creates new form resetpassword
      */
     public Reset_Password() {
-        initComponents();
+        initComponents(); 
+        pass2.setEchoChar((char)0);
+         pass1.setEchoChar((char)0);
+         pt2.setVisible(false);
+                pt1.setVisible(false);
+        
     }
+     private static final String A ="^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|" +
+			"(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|" +
+			"(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|" +
+			"(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})" +
+			"[A-Za-z0-9!~<>,;:_=?*+#.\"&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]" +
+			"{8,30}$";
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile(A);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,7 +59,7 @@ public class Reset_Password extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        pt2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         pass1 = new javax.swing.JPasswordField();
         jLabel14 = new javax.swing.JLabel();
@@ -59,7 +72,7 @@ public class Reset_Password extends javax.swing.JFrame {
         ss1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        pt1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Close_bb = new javax.swing.JPanel();
@@ -67,7 +80,6 @@ public class Reset_Password extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(47, 68, 187)));
@@ -90,10 +102,10 @@ public class Reset_Password extends javax.swing.JFrame {
         jLabel3.setText("Reset ");
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 220, 40));
 
-        jLabel4.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel4.setText("Enter Confirm Password");
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 240, 30));
+        pt2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        pt2.setForeground(new java.awt.Color(128, 128, 128));
+        pt2.setText("Enter Confirm Password");
+        jPanel4.add(pt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 240, 30));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -101,12 +113,15 @@ public class Reset_Password extends javax.swing.JFrame {
 
         pass1.setBackground(new java.awt.Color(255, 255, 255));
         pass1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        pass1.setForeground(new java.awt.Color(204, 204, 204));
+        pass1.setForeground(new java.awt.Color(128, 128, 128));
         pass1.setText("Enter Your Password");
         pass1.setBorder(null);
-        pass1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pass1ActionPerformed(evt);
+        pass1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pass1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pass1FocusLost(evt);
             }
         });
         jPanel5.add(pass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
@@ -141,12 +156,15 @@ public class Reset_Password extends javax.swing.JFrame {
 
         pass2.setBackground(new java.awt.Color(255, 255, 255));
         pass2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        pass2.setForeground(new java.awt.Color(204, 204, 204));
+        pass2.setForeground(new java.awt.Color(128, 128, 128));
         pass2.setText("Enter Confirm Password");
         pass2.setBorder(null);
-        pass2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pass2ActionPerformed(evt);
+        pass2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pass2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pass2FocusLost(evt);
             }
         });
         jPanel6.add(pass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
@@ -202,14 +220,12 @@ public class Reset_Password extends javax.swing.JFrame {
 
         jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 350, 50));
 
-        jLabel6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Enter Your Password");
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 200, 30));
+        pt1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        pt1.setForeground(new java.awt.Color(128, 128, 128));
+        pt1.setText("Enter Your Password");
+        jPanel4.add(pt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 200, 30));
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 410, 550));
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 1060, 580));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -255,15 +271,35 @@ public class Reset_Password extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1200, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(70, 70, 70)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 741, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(60, 80, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 81, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        setSize(new java.awt.Dimension(1200, 693));
+        setSize(new java.awt.Dimension(1200, 741));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void pass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pass1ActionPerformed
 
     private void hhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hhMouseClicked
         // TODO add your handling code here:
@@ -278,10 +314,6 @@ public class Reset_Password extends javax.swing.JFrame {
         hh.setVisible(true);
         pass1.setEchoChar('*');
     }//GEN-LAST:event_ssMouseClicked
-
-    private void pass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pass2ActionPerformed
 
     private void hh1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hh1MouseClicked
         // TODO add your handling code here:
@@ -306,6 +338,7 @@ public class Reset_Password extends javax.swing.JFrame {
         if(p1.equals("")||p2.equals("")){
             JOptionPane.showMessageDialog(null, "Please Fill The All Fild First");
         }else{
+            if(PASSWORD_PATTERN.matcher(p1).matches()){
             if(p1.equals(p2)){
                 int sta=0;
                 try {
@@ -339,6 +372,9 @@ public class Reset_Password extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Both Password must be same");
 
             }
+            }else {
+               JOptionPane.showMessageDialog(null, "Password between 8 and 30 characters\nPassword must contain at least one lowercase letter\none uppercase letter\none numeric digit\none special character.");
+        }
         }
     }//GEN-LAST:event_jLabel16MouseClicked
 
@@ -366,6 +402,53 @@ public class Reset_Password extends javax.swing.JFrame {
         Close_bb.setBackground(new Color(255, 255, 255));
         Close_b.setForeground(new Color(255,0,0));
     }//GEN-LAST:event_Close_bMouseExited
+
+    private void pass1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass1FocusGained
+        // TODO add your handling code here:
+        
+         if(pass1.getText().equals("Enter Your Password")){
+            pt1.setVisible(true);
+            pt1.setForeground( Color.decode("#2F44BB"));
+            pass1.setText("");
+            pass1.setEchoChar('*');
+            pass1.setForeground(Color.decode("#2F44BB"));
+        }
+    }//GEN-LAST:event_pass1FocusGained
+
+    private void pass1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass1FocusLost
+        // TODO add your handling code here:
+         if(pass1.getText().equals("")){
+            pt1.setVisible(false);
+            pass1.setText("Enter Your Password");
+            pass1.setEchoChar((char)0);
+            pass1.setForeground(Color.decode("#808080"));
+        }else{
+            pass1.setVisible(true);
+        }
+    }//GEN-LAST:event_pass1FocusLost
+
+    private void pass2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass2FocusGained
+        // TODO add your handling code here:
+           if(pass2.getText().equals("Enter Confirm Password")){
+            pt2.setVisible(true);
+            pt2.setForeground( Color.decode("#2F44BB"));
+            pass2.setText("");
+            pass2.setEchoChar('*');
+            pass2.setForeground(Color.decode("#2F44BB"));
+        }
+    }//GEN-LAST:event_pass2FocusGained
+
+    private void pass2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass2FocusLost
+        // TODO add your handling code here:
+         if(pass2.getText().equals("")){
+            pt2.setVisible(false);
+            pass2.setText("Enter Confirm Password");
+            pass2.setEchoChar((char)0);
+            pass2.setForeground(Color.decode("#808080"));
+        }else{
+            pass2.setVisible(true);
+        }
+    }//GEN-LAST:event_pass2FocusLost
 
     /**
      * @param args the command line arguments
@@ -416,8 +499,6 @@ public class Reset_Password extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -427,6 +508,8 @@ public class Reset_Password extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPasswordField pass1;
     private javax.swing.JPasswordField pass2;
+    private javax.swing.JLabel pt1;
+    private javax.swing.JLabel pt2;
     private javax.swing.JLabel ss;
     private javax.swing.JLabel ss1;
     // End of variables declaration//GEN-END:variables

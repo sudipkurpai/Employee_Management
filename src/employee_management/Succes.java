@@ -15,22 +15,31 @@ package employee_management;
 public class Succes extends javax.swing.JFrame {
 
     /** Creates new form Warning */
+    String p = null;
     public Succes() {
         initComponents();
     }
- public void msg(String msg,String l) {
-     System.out.println(""+l.getClass().getSimpleName());
     
-    // l;
-     
+        public Succes(String msg) {
+        initComponents();
         
-    // Class c = Class.forName(aa);
-      //  System.out.println("hello"+page);
-        tt.setText(msg);
-  //  String av =new
-        
-   
- }
+        p = msg;
+    }
+    
+    
+// public void msg(String msg) {
+//     System.out.println(""+l.getClass().getSimpleName());
+//    
+//    // l;
+//     
+//        
+//    // Class c = Class.forName(aa);
+//      //  System.out.println("hello"+page);
+//        tt.setText(msg);
+//  //  String av =new
+//        
+//   
+// }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -76,6 +85,11 @@ public class Succes extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("CONTINUE");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -115,6 +129,21 @@ public class Succes extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(290, 267));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+        
+        if(p=="CP"){
+            Change_Password cp = new Change_Password();
+            cp.setVisible(false);
+                    cp.dispose();
+            Login lh = new Login();
+            lh.setVisible(true);
+            
+            this.dispose();
+            
+        }
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments
