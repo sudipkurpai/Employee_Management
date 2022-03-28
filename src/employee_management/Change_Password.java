@@ -335,6 +335,7 @@ public class Change_Password extends javax.swing.JFrame {
                     
                     JOptionPane.showMessageDialog(null, "Your password changed successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
                     Login l = new Login();
+                    l.wel("2");
                     l.setVisible(true);
                     this.dispose();
                 }

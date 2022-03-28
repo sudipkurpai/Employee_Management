@@ -361,6 +361,7 @@ public class Reset_Password extends javax.swing.JFrame {
                         String newline = System.lineSeparator();
                         JOptionPane.showMessageDialog(null, "Your password reset successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
                         Login l = new Login();
+                         l.wel("2");
                         l.setVisible(true);
                         this.dispose();
                     }
