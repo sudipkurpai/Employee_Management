@@ -336,7 +336,8 @@ public class Reset_Password extends javax.swing.JFrame {
         String p1= pass1.getText();
         String p2 = pass2.getText();
         if(p1.equals("")||p2.equals("")){
-            JOptionPane.showMessageDialog(null, "Please Fill The All Fild First");
+            
+            new Warning("Please Fill The All Fild First").setVisible(true);
         }else{
             if(PASSWORD_PATTERN.matcher(p1).matches()){
             if(p1.equals(p2)){
@@ -359,10 +360,11 @@ public class Reset_Password extends javax.swing.JFrame {
                     if(sta==1){
 
                         String newline = System.lineSeparator();
-                        JOptionPane.showMessageDialog(null, "Your password reset successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
-                        Login l = new Login();
-                         l.wel("2");
-                        l.setVisible(true);
+                        Succes we=new Succes();
+          we.ss("<html><p align= center > Your password reset successfully <br>  You Can Login Now.</p> </html>","lg");
+         we.setVisible(true); 
+                        
+                       
                         this.dispose();
                     }
                 } catch (SQLException ex) {
@@ -370,8 +372,10 @@ public class Reset_Password extends javax.swing.JFrame {
                 }
 
             }else{
-                JOptionPane.showMessageDialog(null, "Both Password must be same");
-
+              //  JOptionPane.showMessageDialog(null, "Both Password must be same");
+Warning we=new Warning();
+         we.msg("Both password must be same!");
+         we.setVisible(true);
             }
             }else {
                JOptionPane.showMessageDialog(null, "Password between 8 and 30 characters\nPassword must contain at least one lowercase letter\none uppercase letter\none numeric digit\none special character.");
@@ -381,15 +385,10 @@ public class Reset_Password extends javax.swing.JFrame {
 
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
         // TODO add your handling code here:
-        int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Close This Application ?");
-        if(Yes == 0){
-
-            this.dispose();
-        }else{
-            int No=0;
-            if (No == 0){
-            }
-        }
+        Login lg =new Login();
+        lg.wel("2");
+        lg.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Close_bMouseClicked
 
     private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered

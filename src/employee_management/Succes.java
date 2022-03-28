@@ -15,15 +15,28 @@ package employee_management;
 public class Succes extends javax.swing.JFrame {
 
     /** Creates new form Warning */
-    String p = null;
+    String p = "";
+    String name;
+    String mid;
+    String eml;
+    String ph;
     public Succes() {
         initComponents();
     }
+    public void ot(String ot){
+        tt.setText(ot);
+    }
     
-        public Succes(String msg) {
+  public void vali(String Name,String mng_Id,String Eml,String phone){
+      name =Name;
+      mid = mng_Id;
+      eml=Eml;
+      ph=phone;
+  }
+        public void ss(String msg,String page) {
         initComponents();
-        
-        p = msg;
+        tt.setText(msg);
+        p = page;
     }
     
     
@@ -60,6 +73,8 @@ public class Succes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        ground.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         jPanel1.setBackground(new java.awt.Color(180, 236, 227));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -72,8 +87,8 @@ public class Succes extends javax.swing.JFrame {
         tt.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         tt.setForeground(new java.awt.Color(0, 0, 0));
         tt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tt.setText("Now we can go further.");
-        jPanel1.add(tt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 293, -1));
+        tt.setText("<html><p align= center > Your password changed successfully  You Can Login Now.</p> </html>");
+        jPanel1.add(tt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 293, 70));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/check (5).png"))); // NOI18N
@@ -112,7 +127,7 @@ public class Succes extends javax.swing.JFrame {
         );
         groundLayout.setVerticalGroup(
             groundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,22 +141,79 @@ public class Succes extends javax.swing.JFrame {
             .addComponent(ground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(290, 267));
+        setSize(new java.awt.Dimension(292, 267));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("deprecation")
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        
-        if(p=="CP"){
-            Change_Password cp = new Change_Password();
-            cp.setVisible(false);
-                    cp.dispose();
+        if(p!=""){
+        if(p=="home"){
+           com.raven.main.Main sa = new com.raven.main.Main();
+                                sa.setVisible(true);
+            
+            this.dispose();
+            
+        } else
+        if(p=="lg"){
+           
+           
+          
             Login lh = new Login();
+             lh.wel("2");
             lh.setVisible(true);
             
             this.dispose();
             
+        }else
+        if(p=="cp"){
+            OTP_Validation_Cpass cp = new OTP_Validation_Cpass();
+ 
+                                cp.setVisible(true);
+                                
+                                 cp.vali(name, mid, eml, ph);
+                                 this.dispose();
+        }else if(p=="ov"){
+            OTP_Validation ov = new OTP_Validation();
+       ov.setVisible(true);
+                    ov.gett(eml,name);
+                   
+                    
+                     this.dispose();
+        }else if(p=="rp"){
+            
+            Reset_Password rp = new Reset_Password(); 
+        rp.seet(eml);
+        
+        rp.setVisible(true);
+        this.dispose();
+            
+        }if(p=="cpp"){
+            Change_Password cp = new Change_Password(); 
+        cp.change(eml);
+        
+        cp.setVisible(true);
+        this.dispose();
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        }else{
+            this.dispose();
         }
     }//GEN-LAST:event_jLabel6MouseClicked
 

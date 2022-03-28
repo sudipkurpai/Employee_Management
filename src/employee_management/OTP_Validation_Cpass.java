@@ -39,7 +39,10 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         Id = mng_Id;
         String xx = gen_otp();
          if( xx=="yes"){
-           JOptionPane.showMessageDialog(null, "OTP Send To "+" "+Name+" " +"By Email");  
+ Succes su= new Succes();
+         su.setVisible(true);
+        su.ot("OTP Send To "+" "+Name+" " +"By Email");           
+//JOptionPane.showMessageDialog(null, "OTP Send To "+" "+Name+" " +"By Email");  
          }
         
         
@@ -54,8 +57,11 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
      
     public OTP_Validation_Cpass() {
         initComponents();
-        err.setVisible(false);
+        
           s.setVisible(false);
+          pass.setEchoChar((char)0);
+        e2.setVisible(false);
+        err.setVisible(false);
           
       //  e2.setVisible(false);
        
@@ -419,21 +425,27 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        
+        e2.setVisible(false);
         err.setVisible(false);
         
+         pass.setEchoChar((char)0);
+        
         if( gen_otp()=="yes"){
-           JOptionPane.showMessageDialog(null, "OTP Resend To "+" "+Name+" " +"By Email Successfully");  
+            Succes su =new Succes();
+            su.ot("<html><p align= center > OTP Resend To "+" "+Name+" "+"By <br> Email Successfully</p> </html>");
+            su.setVisible(true); 
+           //JOptionPane.showMessageDialog(null, "OTP Resend To "+" "+Name+" " +"By Email Successfully");  
          }
         
-       //  JOptionPane.showMessageDialog(null, "OTP Resend ");
+
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
         // TODO add your handling code here:
         
-         Login l = new Login();
-        l.setVisible(true);
+         Login lg =new Login();
+        lg.wel("2");
+        lg.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Close_bMouseClicked
 
@@ -441,23 +453,30 @@ public class OTP_Validation_Cpass extends javax.swing.JFrame {
         // TODO add your handling code here:
         String pp= pass.getText();
         if(pp.equals("")){
-            err.setVisible(true);
-            err.setText("Please Input Your OTP!");
+//            err.setVisible(true);
+//            err.setText("Please Input Your OTP!");
+            new Warning("Please Input Your OTP!").setVisible(true);
         }else{
         err.setVisible(false);
        
 
 
         if(pp.equals(otp)){
-        JOptionPane.showMessageDialog(null, "OTP Verified Successfully","OK",JOptionPane.PLAIN_MESSAGE);
-        Change_Password cp = new Change_Password(); 
-        cp.change(Name,Id);
-        
-        cp.setVisible(true);
+           Succes su =new Succes();
+           
+            su.ss("<html><p align= center > OTP Verified Successfully</p> </html>", "cpp");
+            su.vali("","",Id,"");
+            su.setVisible(true);     
+            
+            
+            
         this.dispose();
+        //JOptionPane.showMessageDialog(null, "OTP Verified Successfully","OK",JOptionPane.PLAIN_MESSAGE);
+      
+      
         }else{
-            err.setVisible(true);
-            err.setText("Invalid OTP please try again!");
+             new Error("Invalid OTP please try again!").setVisible(true);
+            err.setVisible(false);
         }
         
 

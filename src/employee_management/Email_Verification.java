@@ -211,7 +211,7 @@ public class Email_Verification extends javax.swing.JFrame {
         Close_bb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         Close_b.setFont(new java.awt.Font("Dialog", 1, 40)); // NOI18N
-        Close_b.setForeground(new java.awt.Color(255, 51, 0));
+        Close_b.setForeground(new java.awt.Color(255, 255, 255));
         Close_b.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Close_b.setText("×");
         Close_b.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -253,15 +253,11 @@ public class Email_Verification extends javax.swing.JFrame {
 
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
         // TODO add your handling code here:
-        int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Close This Application ?");
-        if(Yes == 0){
-
-            this.dispose();
-        }else{
-            int No=0;
-            if (No == 0){
-            }
-        }
+       Login lg =new Login();
+        lg.wel("2");
+        lg.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_Close_bMouseClicked
 
     private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered
@@ -291,9 +287,11 @@ public class Email_Verification extends javax.swing.JFrame {
         String emil= null;
 
         if(eml.equals("")){
-            err.setVisible(true);
+           // err.setVisible(true);
             //JOptionPane.showMessageDialog(null,"Enter Your Email Address First","Error",JOptionPane.ERROR_MESSAGE);
-            err.setText("Enter Your Email Address First");
+           // err.setText("Enter Your Email Address First");
+           
+           new Warning("Enter Your Email Address First").setVisible(true);
         }else{
             try {
                 String sql = "Select * from admin Where mng_id = ? or email = ? ";
@@ -307,21 +305,23 @@ public class Email_Verification extends javax.swing.JFrame {
                     emil =rs.getString("email");
                     String fn =rs.getString("fname");
                     String ln =rs.getString("lname");
-                    emil =rs.getString("email");
+            
                     String Name=fn+" "+ln;
 
                     //   System.out.println("EMAILLLLLLLL "+eml);
 
                     rs.close();
                     ps.close();
-
-                    OTP_Validation ov = new OTP_Validation();
-                    ov.gett(emil,Name);
-                    ov.setVisible(true);
+Succes su = new Succes();
+su.vali(Name,"",emil, "");
+su.ss("Email Verified Succesfully","ov");
+su.setVisible(true);
+                    
                     this.dispose();
                 }else{
-                    err.setVisible(true);
-                    err.setText("Please enter valid email address");
+                   // err.setVisible(true);
+                   // err.setText("Please enter valid email address");
+                    new Error("Please enter valid email address").setVisible(true);
 
                 }
 

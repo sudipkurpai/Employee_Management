@@ -31,9 +31,9 @@ public class Change_Password extends javax.swing.JFrame {
      String Id = null;
      String emll = null;
     
-     void change (String fullname, String mng_Id) {
+     void change ( String mng_Id) {
       
-        Name = fullname;
+     //   Name = fullname;
         
         Id = mng_Id;
         
@@ -303,11 +303,16 @@ public class Change_Password extends javax.swing.JFrame {
         String pp1= pass1.getText();
         String pp2=pass2.getText();
       if(pp1.equals("")||pp2.equals("")){
-           String status = "CP";
-           Change_Password cp = new Change_Password();
+          
+        //  String status = "CP";
+          
            
-                 new Succes(status).setVisible(true);
-                 this.dispose();
+              //   new Succes(status).setVisible(true);
+        
+       new Warning("Please Fill The All Fild First").setVisible(true);
+        
+               
+               //  this.dispose();
                  
        //  JOptionPane.showMessageDialog(null, "Please Fill The All Fild First");
         }else{
@@ -329,25 +334,31 @@ public class Change_Password extends javax.swing.JFrame {
                 // System.out.println("sta"+sta);
                 if(sta==1){
 
-                    String newline = System.lineSeparator();
+                   // String newline = System.lineSeparator();
                 // new Succes(newline).setVisible(true);
-                   
+                   Succes we=new Succes();
+          we.ss("<html><p align= center > Your password changed successfully  You Can Login Now.</p> </html>","lg");
+         we.setVisible(true); 
                     
-                    JOptionPane.showMessageDialog(null, "Your password changed successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
-                    Login l = new Login();
-                    l.wel("2");
-                    l.setVisible(true);
-                    this.dispose();
+                  
+                // JOptionPane.showMessageDialog(null, "Your password changed successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
+                   
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(Change_Password.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }else{
-            JOptionPane.showMessageDialog(null,"Both password must be same","Error",JOptionPane.ERROR_MESSAGE);
+             Warning we=new Warning();
+         we.msg("Both password must be same!");
+         we.setVisible(true);
+            //JOptionPane.showMessageDialog(null,"Both password must be same","Error",JOptionPane.ERROR_MESSAGE);
         }
         }else {
-               JOptionPane.showMessageDialog(null, "Password between 8 and 30 characters\nPassword must contain at least one lowercase letter\none uppercase letter\none numeric digit\none special character.");
+//         Warning we=new Warning();
+//         we.msg("<html><p align= center > Password between 8 and 30 characters\\nPassword must contain at least one lowercase letter\\none uppercase letter\\none numeric digit\\none special character.</p> </html>");
+//         we.setVisible(true);
+               JOptionPane.showMessageDialog(null, "Password between 8 and 30 characters\nPassword must contain at least one lowercase letter\none uppercase letter\none numeric digit\none special character.","Worning!",JOptionPane.ERROR_MESSAGE);    
         }
         
          }
@@ -383,15 +394,10 @@ public class Change_Password extends javax.swing.JFrame {
 
     private void Close_bMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseClicked
         // TODO add your handling code here:
-        int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Close This Application ?");
-        if(Yes == 0){
-
-            this.dispose();
-        }else{
-            int No=0;
-            if (No == 0){
-            }
-        }
+      Login lg =new Login();
+        lg.wel("2");
+        lg.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Close_bMouseClicked
 
     private void Close_bMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Close_bMouseEntered

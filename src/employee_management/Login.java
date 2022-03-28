@@ -5,9 +5,8 @@
  */
 package employee_management;
 
-import com.raven.form.Form_Home;
-import com.raven.form.MainForm;
-import static com.raven.main.Main.main;
+
+import com.sun.media.sound.DLSSoundbank;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,6 +46,7 @@ public class Login extends javax.swing.JFrame {
         
         
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -259,7 +259,7 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 710));
 
-        setSize(new java.awt.Dimension(1200, 711));
+        setSize(new java.awt.Dimension(1200, 709));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -298,7 +298,7 @@ public class Login extends javax.swing.JFrame {
         String phone = null;
         try {
             if(p_email.equals("")||p_pass.equals("")){
-                
+              new Warning("Fill up all field first").setVisible(true);
                 
                // JOptionPane.showMessageDialog(this, "Fill up all field first","Error",JOptionPane.ERROR_MESSAGE);
             }else{
@@ -335,10 +335,11 @@ public class Login extends javax.swing.JFrame {
                                 // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
                                 email.setForeground(Color.GREEN);
                                 pass.setForeground(Color.GREEN);
-                                JOptionPane.showMessageDialog(null, "Login Successfully");
+                           Succes sc= new Succes();
+                           sc.ss("Login Succesfully.","home");
+                           sc.setVisible(true);
 
-                                com.raven.main.Main sa = new com.raven.main.Main();
-                                sa.setVisible(true);
+                                
                                 this.dispose();
                                 //    System.out.println("2222222222222222" +timeee);
 
@@ -351,12 +352,15 @@ public class Login extends javax.swing.JFrame {
                                 email.setForeground(Color.GREEN);
                                 pass.setForeground(Color.GREEN);
                                 //  JOptionPane.showMessageDialog(null,"This's Your first login", "So You need to change the password first.", JOptionPane.PLAIN_MESSAGE);
-                                JOptionPane.showMessageDialog(null, "So You need to change the password first.","This's Your first login", JOptionPane.INFORMATION_MESSAGE);
+                             //   JOptionPane.showMessageDialog(null, "So You need to change the password first.","This's Your first login", JOptionPane.INFORMATION_MESSAGE);
+//new Warning("<html><p align= center > This's Your first login. So You need to change the password first.</p> </html>");
+Succes su = new Succes();
+su.ss("<html><p align= center > This's Your first login.<br> So You need to change the password first.</p> </html>", "cp");
+su.setVisible(true);
 
-                                OTP_Validation_Cpass cp = new OTP_Validation_Cpass();
 
-                                cp.vali(name, mng_Id, eml, phone);
-                                cp.setVisible(true);
+
+                                su.vali(name, mng_Id, eml, phone);
                                 this.dispose();
                                 //    System.out.println("2222222222222222" +timeee);
 
@@ -365,7 +369,8 @@ public class Login extends javax.swing.JFrame {
                             }else{
                                 email.setForeground(Color.RED);
                                 pass.setForeground(Color.RED);
-                                JOptionPane.showMessageDialog(null,"Enter Correct Details", "Login Error", JOptionPane.ERROR_MESSAGE);
+                                new Error("Enter Correct Details").setVisible(true);
+                             //   JOptionPane.showMessageDialog(null,"Enter Correct Details", "Login Error", JOptionPane.ERROR_MESSAGE);
 
                                 //                email.setText("Manager ID");
                                 //                pass.setText("Password");
@@ -378,7 +383,8 @@ public class Login extends javax.swing.JFrame {
                         System.out.println("Exception -"+e);
                     }
                 }else{
-                    JOptionPane.showMessageDialog(null, "Enter Correct User Name","Login Error",JOptionPane.ERROR_MESSAGE);
+                    new Warning("Enter Correct User Name").setVisible(true);
+                    //JOptionPane.showMessageDialog(null, "Enter Correct User Name","Login Error",JOptionPane.ERROR_MESSAGE);
                     //  System.out.println("Enter Correct User Name");
                 }
             }
