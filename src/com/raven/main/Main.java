@@ -14,6 +14,7 @@ import employee_management.Email_Verification;
 import employee_management.Login;
 import employee_management.OTP_Validation;
 import employee_management.Reset_Password;
+import employee_management.test;
 
 
 import java.awt.Component;
@@ -58,7 +59,7 @@ public class Main extends javax.swing.JFrame {
                     } 
                 }else  if (menuIndex == 1) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new MainForm());
+                        main.showForm(new test());
                     } else if (subMenuIndex == 1) {
                         main.showForm(new MainForm());
                     } else if (subMenuIndex == 2) {
