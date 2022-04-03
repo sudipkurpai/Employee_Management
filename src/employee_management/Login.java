@@ -337,6 +337,7 @@ public class Login extends javax.swing.JFrame {
                                 pass.setForeground(Color.GREEN);
                            Succes sc= new Succes();
                            sc.ss("Login Succesfully.","home");
+                           sc.vali(name, mng_Id, eml, phone);
                            sc.setVisible(true);
 
                                 

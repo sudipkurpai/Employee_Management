@@ -10,11 +10,21 @@ import com.raven.swing.MenuItem;
 import com.raven.swing.PopupMenu;
 import com.raven.swing.icon.GoogleMaterialDesignIcons;
 import com.raven.swing.icon.IconFontSwing;
+import employee_management.Create_Cus;
+import employee_management.Create_Emp;
+import employee_management.Cus_LIst;
+import employee_management.Delete_Cus;
+import employee_management.Delete_Emp;
 import employee_management.Email_Verification;
+import employee_management.Emp_LIst;
 import employee_management.Login;
 import employee_management.OTP_Validation;
 import employee_management.Reset_Password;
-import employee_management.test;
+import employee_management.Search_Cus;
+import employee_management.Search_Emp;
+import employee_management.Update_Cus;
+import employee_management.Update_Emp;
+import employee_management.Working_list;
 
 
 import java.awt.Component;
@@ -29,7 +39,16 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 
 public class Main extends javax.swing.JFrame {
-
+    String eml= "";
+    String name= "";
+    String eid = "";
+    String Ph = "";
+public void hello(String emp_id, String emp_name,String e_ph, String email){
+    eid=emp_id;
+    name=emp_name;
+    Ph =e_ph;
+    eml=email;
+}
     private MigLayout layout;
     private Menu menu;
     private Header header;
@@ -59,13 +78,51 @@ public class Main extends javax.swing.JFrame {
                     } 
                 }else  if (menuIndex == 1) {
                     if (subMenuIndex == 0) {
-                        main.showForm(new test());
+                        main.showForm(new Cus_LIst());
+                    } else if (subMenuIndex == 1) {
+                        main.showForm(new Create_Cus());
+                    } else if (subMenuIndex == 2) {
+                        main.showForm(new Search_Cus());
+                    }else if (subMenuIndex == 3) {
+                        main.showForm(new Update_Cus());
+                    } else if (subMenuIndex == 4) {
+                        main.showForm(new Delete_Cus());
+                    } else if (subMenuIndex == 5) {
+                        main.showForm(new Form1());
+                    }  else if (subMenuIndex == 6) {
+                        main.showForm(new Working_list());
+                    }   
+                    
+                } else  if (menuIndex == 2) {
+                    if (subMenuIndex == 0) {
+                        main.showForm(new Emp_LIst());
+                    } else if (subMenuIndex == 1) {
+                        main.showForm(new Create_Emp());
+                    } else if (subMenuIndex == 2) {
+                        main.showForm(new Search_Emp());
+                    }else if (subMenuIndex == 3) {
+                        main.showForm(new Update_Emp());
+                    } else if (subMenuIndex == 4) {
+                        main.showForm(new Delete_Emp());
+                    }  
+               } else  if (menuIndex == 3) {
+                    if (subMenuIndex == 0) {
+                    //    main.showForm(new test());
                     } else if (subMenuIndex == 1) {
                         main.showForm(new MainForm());
                     } else if (subMenuIndex == 2) {
                         main.showForm(new MainForm());
                     } 
-                } else  if (menuIndex == 14) {
+                      } else  if (menuIndex == 5) {
+                    if (subMenuIndex == 0) {
+                       // main.showForm(new test());
+                    } else if (subMenuIndex == 1) {
+                        main.showForm(new MainForm());
+                    } else if (subMenuIndex == 2) {
+                        main.showForm(new MainForm());
+                    } 
+                     
+                } else  if (menuIndex == 6) {
                    
                       int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Log Out ?");
         if(Yes == 0){

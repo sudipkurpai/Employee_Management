@@ -57,6 +57,7 @@ public class Menu extends javax.swing.JPanel {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Home"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Customer Section", "Customer List", "Add Customer", "Search Customer","Update Coustomar","Delete Coustomar","Bills","Working List"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Employee Section", "Employee List", "Add Employee", "Search Employee","Update Employee","Remove Employee"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Working Section", "New Assigned", "Due", " On Going","Completed","Canceled"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/4.png")), "Stock Management", "Show Stocks", "Add Stocks", "Update Stocks"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/5.png")), "Manage Password"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/com/raven/icon/6.png")), "Logout"));

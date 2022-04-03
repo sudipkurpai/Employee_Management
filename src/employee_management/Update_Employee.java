@@ -6,6 +6,9 @@
 package employee_management;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
@@ -14,20 +17,19 @@ import javax.swing.JOptionPane;
  * @author Sudip_Maiti
  */
 public class Update_Employee extends javax.swing.JFrame {
+    String Epp;
+    public void emp_id(String ee){
+        Epp=ee;
+    }
 
     /**
      * Creates new form Add_Employee
      */
     public Update_Employee() {
         initComponents();
+        update();
         
-          fName.setVisible(false);
-        L_name.setVisible(false);
-        Phone.setVisible(false);
-        Email.setVisible(false);
-      
-        mng_name.setEditable(false);
-        mng_id.setEditable(false);
+        
         
     }
 
@@ -299,6 +301,55 @@ public class Update_Employee extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void update(){
+       
+       try {
+        
+             //Data fetch from database
+            String sql = "Select * From emp Where emp_id = ?";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setString(1,"ERP_E1002");
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                String emp_id =rs.getString("emp_id");
+                String f_name =rs.getString("emp_fname");
+                // System.out.println("EMpppppp "+f_name);
+                String l_name =rs.getString("emp_lname");
+                // System.out.println("pppnnn "+l_name);
+                String Phone =rs.getString("emp_phone");
+                 
+                String Email =rs.getString("emp_email");
+               // System.out.println("emlllll "+l_name);
+                String Address =rs.getString("emp_address");
+                
+                firstname.setText(f_name);
+                
+                lastname.setText(l_name);
+                
+                phone3.setText(Phone);
+                  Emp_id.setText(emp_id);
+                email.setText(Email);
+               address.setText(Address);
+                
+                
+               // JOptionPane.showMessageDialog(this, "Product Found");
+                
+               
+                rs.close();
+                ps.close();
+            }else{
+               new Warning("Enter Correct Employee Id").setVisible(true);
+               // System.out.println("Enter Correct Employee Id");
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+           
+    }
+    
+    
+    
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
         String fName = firstname.getText();
@@ -307,15 +358,36 @@ public class Update_Employee extends javax.swing.JFrame {
         String mail = email.getText();
        
         String add = address.getText();
-       
+       String empp= Emp_id.getText();
 
-        //Date from Calender and set Format for date
-       
-        //  System.out.println("!@##%$$%$"+dob);
-        //////////////
-
-        if(fName.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Fill up all field first");
+        if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")){
+           // JOptionPane.showMessageDialog(this, "");
+            new Warning("Fill up all field first").setVisible(true);
+        }else{
+      
+              int i=0;
+              try{
+                   Connection con=DATABASE_CONNECTION.getConnection();  
+                   PreparedStatement ps=con.prepareStatement("UPDATE `emp` SET `emp_fname`='"+fName+"',`emp_lname`='"+lName+"',`emp_phone`='"+ph+"',`emp_email`='"+mail+"',`emp_address`='"+add+"' where emp_id ='"+empp+"'");
+             i=ps.executeUpdate();
+                   con.close();
+              }catch(Exception e){
+                  System.out.println(e);
+              }
+             // System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!"+i);
+             
+        
+           if(i>0){
+              Succes su=new Succes();
+              su.ot("Employee Profile Update Sucessfully ");
+              su.setVisible(true);
+              
+               // JOptionPane.showMessageDialog(this, "Employee Profile Update Sucessfully "); 
+                
+           }else{
+              new Error("Please Try Again").setVisible(true);
+               // JOptionPane.showMessageDialog(this, "Employee Profile Not Update Sucessfully"); 
+           }
         }
       
     }//GEN-LAST:event_jLabel28MouseClicked

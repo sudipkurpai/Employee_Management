@@ -6,6 +6,8 @@
 
 package employee_management;
 
+import com.raven.component.Header;
+
 
 
 /**
@@ -151,6 +153,10 @@ public class Succes extends javax.swing.JFrame {
         if(p!=""){
         if(p=="home"){
            com.raven.main.Main sa = new com.raven.main.Main();
+          Header h=new  Header();
+          sa.hello(mid, name, ph, eml);
+           
+          h.hello(mid, name, ph, eml);
                                 sa.setVisible(true);
             
             this.dispose();
