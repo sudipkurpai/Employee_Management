@@ -1,62 +1,68 @@
 package com.raven.component;
 
+import employee_management.DATABASE_CONNECTION;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JLabel;
 import javax.swing.Timer;
+import javax.swing.table.DefaultTableModel;
 
 public class Header extends javax.swing.JPanel {
     
-   String eml;
-    String Name;
-    String eid = "";
-    String Ph = "";
-public void hello(String emp_id, String emp_name,String e_ph, String email){
+  
     
-        
-   
-    eid=emp_id;
-    Name=emp_name;
-    Ph =e_ph;
-    eml=email;
-//    ei.setText(eid);
-//      nn.setText("hiii");
-      System.out.println("ename"+Name);
-            System.out.println("eid"+eid);
-           
-           test(Name);
-
-       
-     
-}
+  
     public Header() {
         
         initComponents();
+      //  test(Name);
         date();
         time();
-         
-        
-     
+        test();
                
     }
-//     public void hello(String emp_id, String emp_name,String e_ph, String email){
-//     name.setText(emp_id);
-//        id.setText("hii");
-//     System.out.println("mmm"+emp_id);
-//    eid=emp_id;
-//    Name=emp_name;
-//    Ph =e_ph;
-//    eml=email;
-//     date3.setText("hii");
-//     
-//}
-   public void test( String vcd){
+    
+       public void hello(String emp_id, String emp_name,String e_ph, String email){
+//        eid=emp_id;
+//        Name=emp_name;
+//        Ph =e_ph;
+//        eml=email;
+    //    ei.setText(eid);
+          nn.setText(emp_name);
+//          System.out.println("ename"+Name);
+//          System.out.println("eid"+eid);
+
+    }
+//   
        
-       nn.setText(vcd);
-       System.out.println(vcd);
-   }
+       
+ public void test(){
+      try {
+        
+             //Data fetch from database
+            String sql = "Select * From cus  ";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+          
+         
+           while (rs.next())
+           {
+               
+                    String name = rs.getString("cus_fname")+" "+rs.getString("cus_lname");
+                    nn.setText(name);
+      
+                   
+           }
+            }catch(Exception e){
+            System.out.println("error"+e);
+        }
+ }
     
     void date() {
         Date d = new Date();
@@ -95,8 +101,7 @@ public void hello(String emp_id, String emp_name,String e_ph, String email){
         date1 = new javax.swing.JLabel();
         date2 = new javax.swing.JLabel();
         ei = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        nn = new javax.swing.JTextArea();
+        nn = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -121,9 +126,7 @@ public void hello(String emp_id, String emp_name,String e_ph, String email){
         ei.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         ei.setText("jLabel1");
 
-        nn.setColumns(20);
-        nn.setRows(5);
-        jScrollPane1.setViewportView(nn);
+        nn.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -142,8 +145,8 @@ public void hello(String emp_id, String emp_name,String e_ph, String email){
                 .addGap(58, 58, 58)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(111, 111, 111)
                 .addComponent(ei, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pic, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,7 +165,7 @@ public void hello(String emp_id, String emp_name,String e_ph, String email){
                     .addComponent(jSeparator1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(date)
@@ -174,6 +177,7 @@ public void hello(String emp_id, String emp_name,String e_ph, String email){
         );
     }// </editor-fold>//GEN-END:initComponents
  
+    
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.swing.Button cmdMenu;
@@ -181,9 +185,8 @@ public void hello(String emp_id, String emp_name,String e_ph, String email){
     private javax.swing.JLabel date1;
     private javax.swing.JLabel date2;
     public javax.swing.JLabel ei;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea nn;
+    private javax.swing.JLabel nn;
     private com.raven.swing.ImageAvatar pic;
     // End of variables declaration//GEN-END:variables
 }

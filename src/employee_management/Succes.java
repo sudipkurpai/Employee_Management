@@ -158,6 +158,7 @@ public class Succes extends javax.swing.JFrame {
            
           h.hello(mid, name, ph, eml);
                                 sa.setVisible(true);
+                                h.setVisible(true);
             
             this.dispose();
             
