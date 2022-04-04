@@ -7,6 +7,7 @@
 package employee_management;
 
 import com.raven.component.Header;
+import java.awt.GridBagLayout;
 
 
 
@@ -15,6 +16,10 @@ import com.raven.component.Header;
  * @author ganesh_pradhan
  */
 public class Succes extends javax.swing.JFrame {
+    
+    
+    GridBagLayout layout = new GridBagLayout();
+    Working_list p1;
 
     /** Creates new form Warning */
     String p = "";
@@ -24,6 +29,10 @@ public class Succes extends javax.swing.JFrame {
     String ph;
     public Succes() {
         initComponents();
+        p1 = new Working_list();
+        
+        
+        
     }
     public void ot(String ot){
         tt.setText(ot);
@@ -196,11 +205,20 @@ public class Succes extends javax.swing.JFrame {
         rp.setVisible(true);
         this.dispose();
             
-        }if(p=="cpp"){
+        }
+        else if(p=="cpp"){
             Change_Password cp = new Change_Password(); 
         cp.change(eml);
         
         cp.setVisible(true);
+        this.dispose();
+        }
+        else if(p=="cppm"){
+          
+            
+     new  Working_list().setVisible(true);
+        
+        
         this.dispose();
         }
         

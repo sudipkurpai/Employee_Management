@@ -5,6 +5,8 @@
  */
 package employee_management;
 
+import com.raven.event.EventMenuSelected;
+import com.raven.event.page;
 import com.raven.form.Form_Home;
 import java.awt.Color;
 import java.awt.Component;
@@ -338,9 +340,13 @@ public class Emp_LIst extends javax.swing.JPanel {
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
         //  this.showForm(new Add_Employee());
+       
         
     }//GEN-LAST:event_jLabel5MouseClicked
-
+ public void addEvent(page pnane) {
+        //this.event = event;
+    }
+    
     public void showForm(Component form) {
         removeAll();
         add(form);

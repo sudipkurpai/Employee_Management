@@ -25,6 +25,7 @@ import employee_management.Search_Emp;
 import employee_management.Update_Cus;
 import employee_management.Update_Emp;
 import employee_management.Working_list;
+import employee_management.cp_email_valid;
 
 
 import java.awt.Component;
@@ -113,7 +114,7 @@ public void hello(String emp_id, String emp_name,String e_ph, String email){
                     } else if (subMenuIndex == 2) {
                         main.showForm(new MainForm());
                     } 
-                      } else  if (menuIndex == 5) {
+                      } else  if (menuIndex == 4) {
                     if (subMenuIndex == 0) {
                        // main.showForm(new test());
                     } else if (subMenuIndex == 1) {
@@ -121,8 +122,15 @@ public void hello(String emp_id, String emp_name,String e_ph, String email){
                     } else if (subMenuIndex == 2) {
                         main.showForm(new MainForm());
                     } 
+                   
                      
-                } else  if (menuIndex == 6) {
+                } else if (menuIndex == 5) {
+                   
+                    
+                    main.showForm(new cp_email_valid());
+                    
+            
+        }else  if (menuIndex == 6) {
                    
                       int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Log Out ?");
         if(Yes == 0){
