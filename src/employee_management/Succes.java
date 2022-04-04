@@ -156,7 +156,7 @@ public class Succes extends javax.swing.JFrame {
           Header h=new  Header();
           sa.hello(mid, name, ph, eml);
            
-          h.hello(mid, name, ph, eml);
+        //  h.hello(mid, name, ph, eml);
                                 sa.setVisible(true);
                                 h.setVisible(true);
             

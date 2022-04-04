@@ -339,7 +339,7 @@ public class Change_Password extends javax.swing.JFrame {
                    Succes we=new Succes();
           we.ss("<html><p align= center > Your password changed successfully  You Can Login Now.</p> </html>","lg");
          we.setVisible(true); 
-                    
+                    this.dispose();
                   
                 // JOptionPane.showMessageDialog(null, "Your password changed successfully."+newline+"You Can Login Now.","Succes",JOptionPane.PLAIN_MESSAGE);
                    

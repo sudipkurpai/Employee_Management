@@ -7,6 +7,7 @@ package employee_management;
 
 
 import com.sun.media.sound.DLSSoundbank;
+import static java.awt.AWTEventMulticaster.add;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -335,6 +336,15 @@ public class Login extends javax.swing.JFrame {
                                 // MAN_SEASION_DATAOBJECT.man_isert_session(name,mng_Id,phone,eml,timeee,"",date,"");
                                 email.setForeground(Color.GREEN);
                                 pass.setForeground(Color.GREEN);
+                                int i=0;
+                                try(Connection con1 = DATABASE_CONNECTION.getConnection()) {
+                                    PreparedStatement ps1 = con1.prepareStatement("UPDATE `session` SET `mng_id`='"+mng_Id+"',`mng_name`='"+name+"',`mng_ph`='"+phone+"',`mng_email`='"+eml+"'");
+                                   i= ps1.executeUpdate();
+                                      con1.close();
+                                }
+            if(i>0){
+                                
+                                
                            Succes sc= new Succes();
                            sc.ss("Login Succesfully.","home");
                            sc.vali(name, mng_Id, eml, phone);
@@ -342,6 +352,9 @@ public class Login extends javax.swing.JFrame {
 
                                 
                                 this.dispose();
+            }else{
+                
+            }
                                 //    System.out.println("2222222222222222" +timeee);
 
                                 // dm.mngname(name,mng_Id,eml,phone,date,timeee);
